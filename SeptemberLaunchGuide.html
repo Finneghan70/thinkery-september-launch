@@ -1,0 +1,2610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>September Launch Guide — Thinkery Learning Co.</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#3D405B;--teal:#4A7C96;--aqua:#60C3CC;--cream:#F7F7F2;--gold:#F4C95D;
+  --surface:#FFFFFF;--bg:#F4F4EF;--border:#E2E2DA;--text:#3D405B;--text2:#6B6E88;
+  --lit:#3C3489;--lit-bg:#EEEDFE;--lit-mid:#7F77DD;
+  --math:#0C447C;--math-bg:#E6F1FB;--math-mid:#378ADD;
+  --sci:#0A5B45;--sci-bg:#E1F5EE;--sci-mid:#2BAD82;
+  --soc:#6B2D0F;--soc-bg:#FAEEDA;--soc-mid:#D4823A;
+  --t1-c:#3C3489;--t1-bg:#EEEDFE;
+  --t2-c:#085041;--t2-bg:#E1F5EE;
+  --gold-bg:#FEFAE8;
+  --r:10px;--rsm:6px;
+  /* Layer colours */
+  --l1:#5C6BC0;--l1-bg:#EEF0FB;
+  --l2:#00897B;--l2-bg:#E0F2F0;
+  --l3:#F57C00;--l3-bg:#FFF3E0;
+  --l4:#6A1B9A;--l4-bg:#F3E5F5;
+  --l5:#C62828;--l5-bg:#FFEBEE;
+  --l6:#2E7D32;--l6-bg:#E8F5E9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+
+/* ── HEADER ── */
+.app-hdr{background:var(--charcoal);padding:2rem 2.5rem 1.75rem;position:relative;overflow:hidden}
+.app-hdr::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(96,195,204,0.12) 0%,transparent 70%)}
+.app-hdr::after{content:'';position:absolute;bottom:-90px;left:30%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(244,201,93,0.08) 0%,transparent 70%)}
+.hdr-inner{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.hdr-eyebrow{font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--aqua);margin-bottom:8px}
+.hdr-title{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;color:var(--cream);letter-spacing:-0.5px;line-height:1.1;margin-bottom:6px}
+.hdr-sub{font-family:'Lora',serif;font-style:italic;font-size:14px;color:rgba(247,247,242,0.65);margin-bottom:12px}
+.hdr-rule{width:40px;height:2px;background:var(--gold);border-radius:1px;margin:10px 0}
+.hdr-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.hdr-pill{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);color:rgba(247,247,242,0.8);font-size:10px;padding:4px 12px;border-radius:20px;font-weight:500}
+.hdr-back{color:rgba(247,247,242,0.5);font-size:11px;text-decoration:none;display:flex;align-items:center;gap:5px;padding:6px 0;transition:color .15s}
+.hdr-back:hover{color:var(--aqua)}
+
+/* ── NAV ── */
+.app-nav{background:transparent;border-bottom:none;display:flex;overflow-x:auto;padding:0 2rem;align-items:stretch}
+.nav-btn{background:none;border:none;border-bottom:2.5px solid transparent;padding:13px 14px 11px;font-size:12px;font-weight:400;color:var(--text2);white-space:nowrap;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
+.nav-btn.on{color:var(--charcoal);border-bottom-color:var(--aqua);font-weight:600}
+.nav-btn:hover:not(.on){color:var(--charcoal);background:var(--bg)}
+
+/* ── LAYOUT ── */
+.main{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.view{display:none}.view.on{display:block}
+.page-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--charcoal);letter-spacing:-0.3px;margin-bottom:.25rem}
+.eyebrow{font-size:9px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--aqua);margin-bottom:5px}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--charcoal);letter-spacing:-0.1px;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.divider{border:none;border-top:1px solid var(--border);margin:1.5rem 0}
+.note-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--aqua);border-radius:var(--rsm);padding:10px 14px;font-size:12px;color:var(--text2);line-height:1.65;margin-bottom:1.1rem}
+.note-box strong{color:var(--charcoal);font-weight:600}
+.warn-box{background:#FFFBEA;border:1px solid #F0D060;border-left:3px solid var(--gold);border-radius:var(--rsm);padding:10px 14px;font-size:12px;color:#5A4800;line-height:1.65;margin-bottom:1.1rem}
+
+/* ── OVERVIEW CARDS ── */
+.overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:1.5rem}
+.ov-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.1rem;border-top:3px solid}
+.ov-card-num{font-family:'Montserrat',sans-serif;font-size:28px;font-weight:900;line-height:1;margin-bottom:4px}
+.ov-card-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.ov-card-desc{font-size:11.5px;color:var(--text2);line-height:1.55}
+
+/* ── SIX LAYERS ── */
+.layers-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1.5rem}
+.layer-row{display:flex;align-items:stretch;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);background:var(--surface);cursor:pointer;transition:box-shadow .15s}
+.layer-row:hover{box-shadow:0 2px 10px rgba(61,64,91,0.1)}
+.layer-num{width:44px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:#fff;flex-shrink:0}
+.layer-body{padding:.75rem 1rem;flex:1}
+.layer-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;margin-bottom:2px}
+.layer-when{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px;opacity:.7}
+.layer-desc{font-size:11.5px;color:var(--text2);line-height:1.55}
+.layer-arrow{display:flex;align-items:center;padding:0 1rem;color:var(--text2);font-size:16px;flex-shrink:0}
+
+/* ── WEEK TIMELINE ── */
+.week-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
+.wk-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.wk-hdr{padding:.6rem .9rem;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:#fff}
+.wk-body{padding:.75rem .9rem}
+.wk-focus{font-size:12px;font-weight:600;color:var(--charcoal);margin-bottom:6px}
+.wk-items{list-style:none;padding:0}
+.wk-items li{font-size:11px;color:var(--text2);line-height:1.5;padding:2px 0 2px 12px;position:relative}
+.wk-items li::before{content:'→';position:absolute;left:0;color:var(--aqua);font-size:9px;top:3px}
+
+/* ── PHASE TABS ── */
+.phase-tabs{display:flex;gap:8px;margin-bottom:1.25rem;flex-wrap:wrap}
+.phase-tab{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:11.5px;font-weight:500;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
+.phase-tab.on{color:#fff;border-color:transparent}
+.phase-panel{display:none}.phase-panel.on{display:block}
+
+/* ── FOUNDATION LESSON CARDS ── */
+.fl-list{display:flex;flex-direction:column;gap:14px;margin-bottom:1.5rem}
+.fl-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.fl-hdr{display:flex;align-items:stretch;cursor:pointer}
+.fl-num{width:48px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:20px;font-weight:900;color:#fff;flex-shrink:0}
+.fl-hdr-body{padding:.85rem 1rem;flex:1}
+.fl-title{font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:800;margin-bottom:2px}
+.fl-subtitle{font-size:11px;color:var(--text2)}
+.fl-toggle{display:flex;align-items:center;padding:0 1rem;font-size:18px;color:var(--text2);cursor:pointer}
+.fl-body{padding:1rem 1.1rem 1.1rem;border-top:1px solid var(--border);display:none}
+.fl-body.open{display:block}
+
+/* ── LESSON STAGES ── */
+.stage-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:1rem}
+.stage-box{border-radius:var(--rsm);padding:.85rem 1rem;border:1px solid transparent}
+.stage-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;opacity:.7}
+.stage-head{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;margin-bottom:8px}
+.stage-content{font-size:11.5px;line-height:1.6;color:var(--text2)}
+.stage-content strong{color:var(--charcoal)}
+.stage-content ul{padding-left:1.2rem;margin-top:4px}
+.stage-content li{margin-bottom:3px}
+.stage-U{background:var(--lit-bg);border-color:#C5C2F5;color:var(--lit)}
+.stage-P{background:var(--gold-bg);border-color:#EAD570;color:#5A4000}
+.stage-T{background:var(--sci-bg);border-color:#A8DFC9;color:var(--sci)}
+.stage-S{background:#FFF0F5;border-color:#F0B8CF;color:#7A1A3A}
+.pivot-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--rsm);padding:.75rem 1rem;font-size:11.5px;margin-top:.75rem}
+.pivot-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:4px}
+.pivot-text{color:var(--text2);line-height:1.6}
+
+/* ── I-CHART ── */
+.ichart{background:var(--surface);border:2px solid var(--charcoal);border-radius:var(--r);overflow:hidden;margin-bottom:1.1rem}
+.ichart-title{background:var(--charcoal);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;padding:.6rem 1rem;text-transform:uppercase;letter-spacing:1px;text-align:center}
+.ichart-cols{display:grid;grid-template-columns:1fr 1fr}
+.ichart-col-hdr{background:var(--bg);padding:.5rem .9rem;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text2);border-bottom:1px solid var(--border)}
+.ichart-col-hdr.students{border-right:1px solid var(--border)}
+.ichart-items{padding:.6rem .9rem}
+.ichart-items.students{border-right:1px solid var(--border)}
+.ichart-item{font-size:12px;padding:4px 0;border-bottom:1px dashed var(--border);color:var(--text);display:flex;align-items:center;gap:6px}
+.ichart-item:last-child{border-bottom:none}
+.ichart-item::before{content:'✓';color:var(--sci-mid);font-size:10px;flex-shrink:0}
+
+/* ── 10 STEPS ── */
+.steps-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem}
+.step-row{display:flex;align-items:flex-start;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.step-n{width:44px;min-height:54px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:#fff;flex-shrink:0;background:var(--charcoal)}
+.step-body{padding:.7rem 1rem;flex:1}
+.step-action{font-size:12.5px;font-weight:600;color:var(--charcoal);margin-bottom:3px}
+.step-why{font-size:11.5px;color:var(--text2);line-height:1.55}
+.step-note{font-size:11px;color:var(--teal);font-style:italic;margin-top:3px}
+
+/* ── CONFERRING SECTION ── */
+.conf-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.1rem}
+.conf-type-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.1rem;border-top:3px solid}
+.conf-type-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;margin-bottom:4px}
+.conf-type-when{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--text2);margin-bottom:8px}
+.conf-type-desc{font-size:11.5px;color:var(--text2);line-height:1.6}
+.conf-steps{list-style:none;padding:0;margin-top:8px}
+.conf-steps li{font-size:11.5px;color:var(--text);padding:3px 0 3px 18px;position:relative;border-bottom:1px dashed var(--border)}
+.conf-steps li:last-child{border-bottom:none}
+.conf-steps li::before{content:attr(data-n);position:absolute;left:0;font-weight:700;color:var(--aqua);font-size:10px;top:4px}
+
+/* ── 7 STEPS ── */
+.seven-steps{display:flex;flex-direction:column;gap:6px;margin-bottom:1.25rem}
+.ss-row{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:.65rem .9rem}
+.ss-n{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--aqua);min-width:22px;flex-shrink:0;line-height:1.4}
+.ss-text{font-size:12px;color:var(--text);line-height:1.55}
+
+/* ── STICKY PHASES ── */
+.phases-track{display:flex;gap:0;margin-bottom:1.25rem;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.phase-step{flex:1;padding:.7rem .6rem;text-align:center;border-right:1px solid var(--border);position:relative}
+.phase-step:last-child{border-right:none}
+.phase-step-n{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--aqua);line-height:1}
+.phase-step-label{font-size:10px;font-weight:600;color:var(--charcoal);margin-top:3px;line-height:1.3}
+.phase-step-desc{font-size:10px;color:var(--text2);margin-top:4px;line-height:1.4}
+
+/* ── BEHAVIOUR CONF FORM PREVIEW ── */
+.bcf-preview{background:var(--surface);border:2px solid var(--charcoal);border-radius:var(--r);overflow:hidden;margin-bottom:1.1rem}
+.bcf-hdr{background:var(--charcoal);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;padding:.55rem 1rem;display:flex;justify-content:space-between;align-items:center;text-transform:uppercase;letter-spacing:.8px}
+.bcf-body{padding:.85rem 1rem;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bcf-field{border-bottom:1px solid var(--border);padding:.4rem 0;font-size:11.5px;color:var(--text2)}
+.bcf-field-label{font-size:9.5px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--text2);margin-bottom:2px}
+.bcf-field-line{height:20px;border-bottom:1px dashed var(--border)}
+.bcf-full{grid-column:1/-1}
+
+/* ── EXPANDABLE SECTIONS (quick-ref tabs) ── */
+.exp-section{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:.75rem}
+.exp-hdr{display:flex;align-items:center;gap:10px;padding:.75rem 1rem;cursor:pointer;background:var(--surface);transition:background .12s;user-select:none}
+.exp-hdr:hover{background:var(--bg)}
+.exp-hdr.open{background:var(--bg)}
+.exp-hdr-icon{font-size:14px;flex-shrink:0}
+.exp-hdr-title{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--charcoal);flex:1}
+.exp-hdr-sub{font-size:10.5px;color:var(--text2)}
+.exp-hdr-tog{font-size:11px;color:var(--text2);flex-shrink:0;transition:transform .2s}
+.exp-hdr-tog.open{transform:rotate(180deg)}
+.exp-body{display:none;border-top:1px solid var(--border);padding:.85rem 1rem 1rem}
+.exp-body.open{display:block}
+.exp-accent{width:4px;height:100%;border-radius:2px;flex-shrink:0;align-self:stretch;min-height:20px}
+
+/* ── WEEK ACCORDION ── */
+.week-accordion{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.week-block{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);background:var(--surface)}
+.week-hdr{display:flex;align-items:stretch;cursor:pointer;transition:box-shadow .15s}
+.week-hdr:hover{box-shadow:0 2px 10px rgba(61,64,91,0.1)}
+.week-stripe{width:6px;flex-shrink:0}
+.week-hdr-body{padding:.9rem 1.1rem;flex:1;min-width:0}
+.week-hdr-top{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
+.week-label{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:900;letter-spacing:-.3px}
+.week-dates{font-size:10.5px;font-weight:600;color:var(--text2)}
+.week-focus{font-size:12px;font-weight:600;color:var(--charcoal);margin-bottom:6px}
+.week-items{display:flex;flex-wrap:wrap;gap:5px}
+.week-item-pill{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--bg);border:1px solid var(--border);color:var(--text2);white-space:nowrap}
+.week-toggle-col{display:flex;align-items:center;padding:0 1.1rem;font-size:18px;color:var(--text2);flex-shrink:0}
+.week-days{display:none;border-top:1px solid var(--border)}
+.week-days.open{display:block}
+
+/* ── DAY-BY-DAY ── */
+.day-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+.day-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.day-hdr{display:flex;align-items:center;gap:0;cursor:pointer}
+.day-num{background:var(--charcoal);color:var(--cream);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;padding:.65rem 1rem;white-space:nowrap;min-width:80px;text-align:center}
+.day-title{padding:.65rem 1rem;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;flex:1}
+.day-tags{display:flex;gap:5px;padding:.65rem .75rem;flex-wrap:wrap}
+.day-tag{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;white-space:nowrap}
+.day-toggle{padding:0 1rem;color:var(--text2);flex-shrink:0}
+.day-body{padding:0;border-top:1px solid var(--border);display:none}
+.day-body.open{display:block}
+/* Schedule blocks */
+.sched-block{display:grid;grid-template-columns:90px 1fr;border-bottom:1px solid var(--border)}
+.sched-block:last-child{border-bottom:none}
+.sched-time{background:var(--bg);padding:.75rem .8rem;font-size:10px;font-weight:700;color:var(--text2);border-right:1px solid var(--border);line-height:1.4;display:flex;align-items:flex-start;padding-top:.85rem}
+.sched-content{padding:.75rem 1rem}
+.sched-block-name{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--charcoal);margin-bottom:.5rem}
+.sched-what{font-size:11.5px;line-height:1.65;color:var(--text);margin-bottom:.45rem}
+.sched-what strong{color:var(--charcoal)}
+.sched-what ul{padding-left:1.2rem;margin-top:4px}
+.sched-what li{margin-bottom:3px}
+.sched-meta{display:flex;flex-direction:column;gap:4px;margin-top:.5rem}
+.sched-say{font-size:11px;color:var(--lit);background:var(--lit-bg);border-left:2px solid var(--lit-mid);padding:5px 9px;border-radius:0 var(--rsm) var(--rsm) 0;line-height:1.55;font-style:italic}
+.sched-look{font-size:11px;color:var(--sci);background:var(--sci-bg);border-left:2px solid var(--sci-mid);padding:5px 9px;border-radius:0 var(--rsm) var(--rsm) 0;line-height:1.55}
+.sched-look::before{content:'👁 Look for: ';font-weight:700;font-style:normal}
+.sched-mats{font-size:10.5px;color:var(--text2);background:var(--bg);border:1px solid var(--border);padding:4px 8px;border-radius:var(--rsm);line-height:1.5}
+.sched-mats::before{content:'📦 ';font-style:normal}
+.sched-break{background:var(--bg);padding:.5rem 1rem;font-size:10.5px;color:var(--text2);font-style:italic;border-bottom:1px solid var(--border)}
+@media(max-width:600px){.sched-block{grid-template-columns:70px 1fr}.sched-time{font-size:9px}}
+
+/* ── STICKY BAR + QUICK REF BUTTONS ── */
+.sticky-bar{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border)}
+.nav-divider{width:1px;background:var(--border);margin:8px 4px;align-self:stretch;flex-shrink:0}
+.qref-row{display:flex;align-items:center;gap:0;padding:0 2rem;border-top:1px solid var(--border);background:var(--bg);overflow-x:auto}
+.qref-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text2);white-space:nowrap;padding:0 12px 0 0;margin-right:4px;border-right:1px solid var(--border);align-self:center}
+.qref-btn{background:none;border:none;border-bottom:2.5px solid transparent;padding:13px 11px 11px;font-size:11.5px;font-weight:400;color:var(--text2);white-space:nowrap;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
+.qref-btn:hover{color:var(--charcoal);background:var(--bg)}
+.qref-btn.on{color:var(--charcoal);border-bottom-color:var(--gold);font-weight:600}
+
+
+/* ── SETTINGS BAR ── */
+.settings-bar{background:var(--charcoal);padding:.65rem 1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;border-radius:var(--r);margin-bottom:1.25rem}
+.settings-label{font-size:11px;font-weight:600;color:rgba(247,247,242,0.7);letter-spacing:.5px;white-space:nowrap}
+.settings-input{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);color:var(--cream);font-family:'Inter',sans-serif;font-size:12px;padding:4px 10px;border-radius:var(--rsm);width:80px;text-align:center}
+.settings-input:focus{outline:none;border-color:var(--aqua);background:rgba(255,255,255,0.18)}
+.settings-note{font-size:10.5px;color:rgba(247,247,242,0.45);margin-left:auto}
+.settings-reset{background:none;border:1px solid rgba(255,255,255,0.2);color:rgba(247,247,242,0.6);font-size:10px;padding:3px 10px;border-radius:var(--rsm);cursor:pointer;font-family:'Inter',sans-serif;transition:all .15s}
+.settings-reset:hover{border-color:var(--aqua);color:var(--aqua)}
+
+/* ── EDITABLE TIMES ── */
+.sched-time{cursor:pointer;user-select:none;transition:background .12s;position:relative}
+.sched-time:hover{background:var(--border)}
+.sched-time.custom{background:#EEF9F9;color:var(--teal)}
+.sched-time.custom::after{content:'✎';position:absolute;top:4px;right:4px;font-size:8px;opacity:.6}
+.sched-time.editing{background:var(--surface);padding:0}
+.time-edit-input{width:100%;height:100%;border:2px solid var(--aqua);border-radius:0;background:var(--surface);font-family:'Inter',sans-serif;font-size:10px;font-weight:700;text-align:center;padding:.5rem .3rem;color:var(--charcoal);outline:none}
+
+/* ── PREP CHECKLIST ── */
+.prep-section{border-top:2px dashed var(--gold);background:var(--gold-bg)}
+.prep-hdr{display:flex;align-items:center;gap:8px;padding:.65rem 1rem;cursor:pointer}
+.prep-hdr-icon{font-size:14px}
+.prep-hdr-label{font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;color:var(--charcoal);flex:1}
+.prep-hdr-sub{font-size:10px;color:var(--text2)}
+.prep-hdr-toggle{font-size:12px;color:var(--text2)}
+.prep-body{padding:.25rem 1rem .85rem;display:none}
+.prep-body.open{display:block}
+.prep-progress{height:4px;background:var(--border);border-radius:2px;margin-bottom:.75rem;overflow:hidden}
+.prep-progress-bar{height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
+.prep-item{display:flex;align-items:flex-start;gap:10px;padding:5px 0;border-bottom:1px solid rgba(0,0,0,0.05)}
+.prep-item:last-child{border-bottom:none}
+.prep-cb{width:15px;height:15px;border:2px solid var(--charcoal);border-radius:3px;flex-shrink:0;margin-top:1px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;background:var(--surface)}
+.prep-cb.checked{background:var(--sci-mid);border-color:var(--sci-mid)}
+.prep-cb.checked::after{content:'✓';color:#fff;font-size:10px;font-weight:700}
+.prep-text{font-size:11.5px;color:var(--text);line-height:1.55;cursor:pointer;transition:color .12s}
+.prep-text.checked{color:var(--text2);text-decoration:line-through;opacity:.6}
+.prep-clear{margin-top:.65rem;background:none;border:1px solid var(--border);color:var(--text2);font-size:10px;padding:3px 10px;border-radius:var(--rsm);cursor:pointer;font-family:'Inter',sans-serif}
+.prep-clear:hover{border-color:var(--charcoal);color:var(--charcoal)}
+
+/* ── ENGAGEMENT CONTINUUM ── */
+.cont-bar{display:flex;border-radius:var(--r);overflow:hidden;margin-bottom:1.1rem;border:1px solid var(--border)}
+.cont-seg{flex:1;padding:.75rem .9rem;text-align:center}
+.cont-seg-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;margin-bottom:3px}
+.cont-seg-desc{font-size:11px;line-height:1.4}
+.cont-arrow{display:flex;align-items:center;justify-content:center;padding:0 4px;font-size:20px;color:var(--text2);background:var(--bg)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:700px){
+  .overview-grid{grid-template-columns:1fr 1fr}
+  .week-grid{grid-template-columns:1fr 1fr}
+  .stage-grid{grid-template-columns:1fr}
+  .conf-type-grid{grid-template-columns:1fr}
+  .ichart-cols{grid-template-columns:1fr}
+  .ichart-col-hdr.students,.ichart-items.students{border-right:none;border-bottom:1px solid var(--border)}
+  .phases-track{flex-direction:column}
+  .bcf-body{grid-template-columns:1fr}
+  .hdr-title{font-size:22px}
+  .main{padding:1.25rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="app-hdr">
+  <div class="hdr-inner">
+    <div>
+      <div class="hdr-eyebrow">Thinkery Learning Co. · BC Grade 4/5</div>
+      <div class="hdr-title">September Launch Guide</div>
+      <div class="hdr-sub">Building the foundation everything else rests on</div>
+      <div class="hdr-rule"></div>
+      <div class="hdr-pills">
+        <span class="hdr-pill">Indigenous Ways of Knowing</span>
+        <span class="hdr-pill">Self-Regulated Learning</span>
+        <span class="hdr-pill">Teach Daily Framework</span>
+      </div>
+    </div>
+    <div style="text-align:right">
+      <a href="ThinkeryYearPlan-Complete.html" class="hdr-back">← Year Plan</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="sticky-bar" id="sticky-bar">
+  <nav class="app-nav" id="main-nav">
+    <button class="nav-btn on" onclick="showView('overview')">Overview</button>
+    <button class="nav-btn" onclick="showView('sequence')">📅 Week by Week</button>
+    <button class="nav-btn" onclick="showView('about')">About this guide</button>
+  </nav>
+  <div class="qref-row">
+    <span class="qref-label">Quick reference</span>
+    <button class="qref-btn" onclick="showRef('tensteps')" data-ref="tensteps">↪ 10 Steps</button>
+    <button class="qref-btn" onclick="showRef('foundation')" data-ref="foundation">↪ Foundation Lessons</button>
+    <button class="qref-btn" onclick="showRef('icharts')" data-ref="icharts">↪ I-Charts</button>
+    <button class="qref-btn" onclick="showRef('conferring')" data-ref="conferring">↪ Conferring</button>
+    <button class="qref-btn" onclick="showRef('engagement')" data-ref="engagement">↪ Engagement</button>
+  </div>
+</div>
+
+
+<div class="main">
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: OVERVIEW
+══════════════════════════════════════════════════ -->
+<div id="view-overview" class="view on">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">Where we begin</div>
+    <div class="page-title">The September Launch</div>
+  </div>
+
+  <div class="note-box">
+    <strong>This guide is the doing document.</strong> The year plan shows what September produces — the ecosystems inquiry, the first Reading Strategies (CAFE) goals, the running math routines. This guide shows how you get there. The four weeks you spend here are the most important teaching of the year. Everything else depends on what you build now.
+  </div>
+
+  <div class="overview-grid">
+    <div class="ov-card" style="border-top-color:var(--l4)">
+      <div class="ov-card-num" style="color:var(--l4)">5</div>
+      <div class="ov-card-label" style="color:var(--l4)">Foundation Lessons</div>
+      <div class="ov-card-desc">Taught before the 10 Steps. Build shared language and establish what independence and engagement mean in this classroom.</div>
+    </div>
+    <div class="ov-card" style="border-top-color:var(--charcoal)">
+      <div class="ov-card-num" style="color:var(--charcoal)">10</div>
+      <div class="ov-card-label" style="color:var(--charcoal)">Steps to Independence</div>
+      <div class="ov-card-desc">The framework for teaching any routine. Used for transitions, Read to Self, Math, collaborative learning — anything that needs to become automatic.</div>
+    </div>
+    <div class="ov-card" style="border-top-color:var(--sci-mid)">
+      <div class="ov-card-num" style="color:var(--sci-mid)">20</div>
+      <div class="ov-card-label" style="color:var(--sci-mid)">Full Day Plans</div>
+      <div class="ov-card-desc">Every day of September mapped out — time-blocked, with teaching language, look-fors, materials, and a tomorrow prep checklist.</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Content and launch happen together.</strong> Read to Self engagement is built using books about BC ecosystems. The first Math by Myself session uses place value review. The land acknowledgement walk happens while you are also establishing transitions and the quiet signal. September's inquiry theme is the vehicle. The launch is the driver.
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">Before Day 1 — what needs to be in place</div>
+  <div class="note-box">Everything below should be physically ready before students arrive on Day 1. This is not a conceptual checklist — these are the objects, charts, and arrangements that make the first day possible.</div>
+  <div class="day-grid" id="pre-checklist"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: ABOUT THIS GUIDE
+══════════════════════════════════════════════════ -->
+<div id="view-about" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">The conceptual framework</div>
+    <div class="page-title">About this guide</div>
+  </div>
+
+  <div class="sec-title">The Teach Daily framework</div>
+  <div class="note-box">
+    This guide is built on <strong>Teach Daily's Teaching Structure</strong>, developed by Gail Boushey and Allison Behne, evolved from the original Daily 5, Reading Strategies (CAFE), and Math frameworks. The Teaching Structure has four components:<br><br>
+    <strong>1. Whole Group Lesson</strong> (10–15 min) — one clear idea, taught briefly<br>
+    <strong>2. Set a Purpose</strong> (under 2 min) — students name how they will apply the learning<br>
+    <strong>3. Independent Practice + Responsive Teaching</strong> (15–30 min, simultaneous) — students work; teacher confers<br>
+    <strong>4. Share &amp; Reflect</strong> (5–10 min) — students do the thinking in the review<br><br>
+    September's launch builds the conditions for steps 3 and 4 to be genuine. Without established independence and engagement, the work period is compliance, not learning.
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">The six layers of the September launch</div>
+  <div class="note-box">These layers are not weeks — they overlap and build on each other. The sequence tells you what to <em>introduce</em> first. You are always tending all active layers simultaneously.</div>
+  <div class="layers-list" id="layers-list"></div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">Why this order?</div>
+  <div class="note-box">
+    <strong>Relationships before routines.</strong> A student who doesn't feel safe will not take risks in their learning. The first two days are deliberately relational — not procedural. Every routine you teach after Day 2 will land better because students feel known.<br><br>
+    <strong>Routines before independence.</strong> The transitions lesson on Day 3 is not about transitions. It is a low-stakes rehearsal of the 10 Steps framework, using a simple routine so that when you use the same structure for Read to Self on Day 9, students already know how it works.<br><br>
+    <strong>Foundation lessons before the 10 Steps.</strong> You cannot build an I-chart for independence until students know what independence means. You cannot build engagement intervals until students have language for the continuum. The five foundation lessons are not prerequisites in a bureaucratic sense — they are the vocabulary that makes the 10 Steps coherent.<br><br>
+    <strong>Independent before collaborative.</strong> Students who cannot sustain independent engagement will not sustain collaborative engagement. Collaboration is harder, not easier. It adds responsibility to others. Launch independent structures first, establish them firmly, then add collaboration on top.
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="sec-title">How this guide connects to the rest of the Thinkery suite</div>
+  <div class="note-box">
+    <strong>The Year Plan</strong> shows what September produces — the inquiry content, the first Reading Strategies (CAFE) goals, the running math routines. This guide shows how you get there.<br><br>
+    <strong>The Assessment Tool</strong> is where you record what you find during conferring. This guide tells you how to confer in September; the Assessment Tool is where those observations live and grow across the year.<br><br>
+    <strong>The Interactive Schedule Builder</strong> (coming soon) will let you map the day plans here onto your actual school timetable with non-negotiables (recess, gym, prep) built in.
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: WEEK BY WEEK
+══════════════════════════════════════════════════ -->
+<div id="view-sequence" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">The full sequence</div>
+    <div class="page-title">Week by Week</div>
+  </div>
+  <div class="note-box">Each week builds on the previous. Days are labeled Day 1–20 so this guide works regardless of your school's specific calendar. Map Day 1 to your first day with students.</div>
+  <div class="week-accordion" id="week-accordion"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: FOUNDATION LESSONS
+══════════════════════════════════════════════════ -->
+<div id="view-foundation" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">Quick reference — Phase 1</div>
+    <div class="page-title">Foundation Lessons</div>
+  </div>
+  <div class="note-box"><strong>Full lesson plans live in the day plans</strong> (Days 4–8 in the Week by Week view). This tab is a quick reference — open it mid-planning to check a lesson’s structure without scrolling through the full day.</div>
+  <div class="warn-box"><strong>Order matters.</strong> Teach these in sequence. Each lesson assumes the vocabulary of the one before it. Do not skip to the 10 Steps until all five foundation lessons are complete.</div>
+
+  <!-- Independent foundation lessons — open by default -->
+  <div class="exp-section">
+    <div class="exp-hdr open" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">🧱</span>
+      <span class="exp-hdr-title">Five foundation lessons — Independent Learning</span>
+      <span class="exp-hdr-sub">Days 4–8 — taught before the 10 Steps</span>
+      <span class="exp-hdr-tog open">▼</span>
+    </div>
+    <div class="exp-body open">
+      <div class="fl-list" id="foundation-lessons"></div>
+    </div>
+  </div>
+
+  <!-- Collaborative foundation lesson -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">🤝</span>
+      <span class="exp-hdr-title">One additional foundation lesson — Collaborative Learning</span>
+      <span class="exp-hdr-sub">Day 16 — taught after independent engagement is stable</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box">Teach this after the 10 Steps have been applied to Independent Learning and engagement is building, and before running the 10 Steps for Collaborative Learning.</div>
+      <div class="fl-list" id="collab-foundation"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: 10 STEPS
+══════════════════════════════════════════════════ -->
+<div id="view-tensteps" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">The universal routine framework</div>
+    <div class="page-title">The 10 Steps to Teaching and Learning Independence</div>
+  </div>
+  <div class="note-box"><strong>This framework teaches any routine.</strong> Transitions, Read to Self, Math by Myself, collaborative learning, book shopping — any behaviour you want to become automatic gets the same 10-step treatment. The content of the I-chart changes. The structure never does.</div>
+  <div class="note-box"><strong>This is a lesson, not a checklist.</strong> All 10 steps happen in one session (30–40 minutes). The first time you use this is for Transitions on Day 3 — a low-stakes practice run. After that, use it for every new routine across September and beyond.</div>
+
+  <!-- The 10 Steps — open by default -->
+  <div class="exp-section">
+    <div class="exp-hdr open" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">📝</span>
+      <span class="exp-hdr-title">The 10 Steps</span>
+      <span class="exp-hdr-sub">Select Independent or Collaborative Learning below</span>
+      <span class="exp-hdr-tog open">▼</span>
+    </div>
+    <div class="exp-body open">
+      <div class="phase-tabs">
+        <button class="phase-tab on" style="background:var(--charcoal);color:#fff;border-color:var(--charcoal)" onclick="showPhase('ind','step-tabs')">Independent Learning</button>
+        <button class="phase-tab" onclick="showPhase('col','step-tabs')">Collaborative Learning</button>
+      </div>
+      <div id="ind-panel" class="phase-panel on">
+        <div class="note-box">The examples below show the 10 Steps applied to <strong>Read to Self</strong>. The notes in each step explain how the language and I-chart content shift for different routines. The structure is identical every time.</div>
+        <div class="steps-list" id="steps-independent"></div>
+      </div>
+      <div id="col-panel" class="phase-panel">
+        <div class="note-box">Repeat the full 10 Steps for Collaborative Learning. The I-chart changes — add conversational and relational expectations to the student side. The teacher side stays the same.</div>
+        <div class="steps-list" id="steps-collaborative"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 Phases -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">📈</span>
+      <span class="exp-hdr-title">The 5 Phases of Sticky Routines</span>
+      <span class="exp-hdr-sub">From introduction to automatic</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box">A routine is not done after one lesson. After teaching with the 10 Steps, observe which phase students are in and decide whether to reteach. Early phases = reteach the whole lesson. Later phases = confer individually with the barometer student.</div>
+      <div class="phases-track" id="phases-track"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: I-CHARTS
+══════════════════════════════════════════════════ -->
+
+
+<div id="view-icharts" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">Quick reference — co-created with students</div>
+    <div class="page-title">I-Charts</div>
+  </div>
+
+  <!-- How I-charts work — open by default -->
+  <div class="exp-section">
+    <div class="exp-hdr open" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">📋</span>
+      <span class="exp-hdr-title">How I-charts work</span>
+      <span class="exp-hdr-sub">The process behind every routine launch</span>
+      <span class="exp-hdr-tog open">▼</span>
+    </div>
+    <div class="exp-body open">
+      <div class="note-box"><strong>Every routine gets its own I-chart session.</strong> The items below are the expected outcomes — the language students will arrive at when guided well through Step 3 of the 10 Steps. Your job is to ask questions, not fill in blanks.</div>
+      <div class="warn-box"><strong>Always start with blank chart paper.</strong> Write only the headings “Students” and “Teacher” before the lesson begins. Everything else is built live with students.</div>
+      <div class="note-box"><strong>S.P.A.C.E. in every independent chart.</strong> “Choose a good-fit S.P.A.C.E. spot” appears on the student side of every independent (non-collaborative) routine. Students learned what S.P.A.C.E. means in Foundation Lesson 4 — the I-chart is where they commit to applying it.</div>
+    </div>
+  </div>
+
+  <!-- Per-task I-charts -->
+  <div class="exp-section">
+    <div class="exp-hdr open" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">📑</span>
+      <span class="exp-hdr-title">I-chart by routine</span>
+      <span class="exp-hdr-sub">Select a routine to see its expected I-chart</span>
+      <span class="exp-hdr-tog open">▼</span>
+    </div>
+    <div class="exp-body open">
+      <div class="phase-tabs" id="ichart-tabs" style="flex-wrap:wrap;gap:6px;margin-bottom:1.25rem"></div>
+      <div id="ichart-display"></div>
+    </div>
+  </div>
+</div>
+
+
+<div id="view-conferring" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">Layer 6 — begins in Week 3</div>
+    <div class="page-title">Conferring in September</div>
+  </div>
+
+  <!-- Orientation notes — always visible -->
+  <div class="note-box" style="border-left-color:var(--gold)">
+    <strong>This tab is a how-to guide, not a recording tool.</strong> Everything here explains the three conferring moves, their sequence, and how to structure each one. What you actually observe and record during conferences — student strengths, goals, next steps, touch points — lives in the <span style="color:var(--gold);font-weight:700">Thinkery Assessment Tool</span>. That is where your conferring notebook data becomes visible over time and connected to BC’s proficiency scale.
+  </div>
+  <div class="note-box">
+    <strong>September conferring is about behaviour, not content.</strong> You do not begin Reading Strategies (CAFE) goal-setting conferences until students can sustain independent practice. The first two weeks, your job during the work period is to stay out of the way. Week 3, you begin Behavior Conferences and Quick Checks. Goal-setting conferences begin in Week 4 once engagement is established.
+  </div>
+
+  <!-- Three conferring moves — open by default -->
+  <div class="exp-section">
+    <div class="exp-hdr open" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">📋</span>
+      <span class="exp-hdr-title">Three conferring moves — in sequence</span>
+      <span class="exp-hdr-sub">Behaviour Conference → Quick Check → Goal-Setting</span>
+      <span class="exp-hdr-tog open">▼</span>
+    </div>
+    <div class="exp-body open">
+      <div class="conf-type-grid" id="conf-types"></div>
+    </div>
+  </div>
+
+  <!-- 7 Steps -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">🔢</span>
+      <span class="exp-hdr-title">The 7 Steps from Assessment to Instruction</span>
+      <span class="exp-hdr-sub">Use when beginning goal-setting conferences in Week 4</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box">Use this when you are ready to begin goal-setting conferences (Week 4). Not before. Rushing to content conferring before independence is established is the most common mistake in launching Daily 5.</div>
+      <div class="seven-steps" id="seven-steps"></div>
+    </div>
+  </div>
+
+  <!-- Lesson Framework during conferring -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">🎯</span>
+      <span class="exp-hdr-title">The Lesson Framework during conferring</span>
+      <span class="exp-hdr-sub">Understand → Prepare → Teach → Support — every conference, 5–8 minutes</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box">Every conference follows the same 4-stage structure as the Foundation Lessons. In a conference, these four stages take 5–8 minutes total.</div>
+      <div class="stage-grid">
+        <div class="stage-box stage-U">
+          <div class="stage-label">Stage 1</div>
+          <div class="stage-head">Observe &amp; Plan (Understand)</div>
+          <div class="stage-content">Sit beside the student. Watch for 20–30 seconds before speaking. What are they doing? What is working? What does their body language tell you? Identify one teaching point.</div>
+        </div>
+        <div class="stage-box stage-P">
+          <div class="stage-label">Stage 2</div>
+          <div class="stage-head">Engage &amp; Connect (Prepare)</div>
+          <div class="stage-content">Set a positive tone. Connect to the student’s reading, writing, or thinking. Name what you noticed that’s going well. State your purpose for this conference in one sentence.</div>
+        </div>
+        <div class="stage-box stage-T">
+          <div class="stage-label">Stage 3</div>
+          <div class="stage-head">Teach One Thing (Teach)</div>
+          <div class="stage-content">Use one instructional move: <strong>Explicitly Explain, Model, Think Aloud, Guide/Prompt, Offer Advice,</strong> or <strong>Feedback.</strong> Not two. One clear teaching point.</div>
+        </div>
+        <div class="stage-box stage-S">
+          <div class="stage-label">Stage 4</div>
+          <div class="stage-head">Practice &amp; Record (Support)</div>
+          <div class="stage-content">Student names what they will work on in their own words. Record in your conferring notebook: strength, teaching point, next step, touch point date. 30 seconds to record.</div>
+        </div>
+      </div>
+      <div class="pivot-box">
+        <div class="pivot-label">Instructional Pivot</div>
+        <div class="pivot-text"><strong>Did my instruction work? Yes / No.</strong> If no: adjust the setting, materials, instructional practice, or cognitive process. Do not repeat the same approach and expect a different result.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     VIEW: ENGAGEMENT
+══════════════════════════════════════════════════ -->
+<div id="view-engagement" class="view">
+  <div style="margin-bottom:1.25rem">
+    <div class="eyebrow">The conceptual foundation</div>
+    <div class="page-title">Understanding Engagement</div>
+  </div>
+
+  <!-- Continuum — open by default -->
+  <div class="exp-section">
+    <div class="exp-hdr open" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">📊</span>
+      <span class="exp-hdr-title">The Continuum of Engagement</span>
+      <span class="exp-hdr-sub">Disengaged → Passive → Engaged</span>
+      <span class="exp-hdr-tog open">▼</span>
+    </div>
+    <div class="exp-body open">
+      <div class="cont-bar">
+        <div class="cont-seg" style="background:#FFEBEE">
+          <div class="cont-seg-label" style="color:#C62828">Disengaged</div>
+          <div class="cont-seg-desc" style="color:#7A1A1A">Off-task. Avoiding the work. May appear to be working but is not applying thinking.</div>
+        </div>
+        <div class="cont-arrow">→</div>
+        <div class="cont-seg" style="background:#FFF8E1">
+          <div class="cont-seg-label" style="color:#E65100">Passive</div>
+          <div class="cont-seg-desc" style="color:#7A3A00">Present and compliant but not actively engaged. Going through the motions.</div>
+        </div>
+        <div class="cont-arrow">→</div>
+        <div class="cont-seg" style="background:#E8F5E9">
+          <div class="cont-seg-label" style="color:#2E7D32">Engaged</div>
+          <div class="cont-seg-desc" style="color:#1A4A1A">Actively applying thinking. Reading, writing, problem-solving with genuine focus.</div>
+        </div>
+      </div>
+      <div class="note-box"><strong>Passive is not the goal.</strong> A quiet classroom where everyone appears to be working is not evidence of engagement. The Continuum gives both teachers and students language to name where they are — honestly — and what to reach for.</div>
+    </div>
+  </div>
+
+  <!-- Self-assessment questions -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">💬</span>
+      <span class="exp-hdr-title">Student self-assessment questions</span>
+      <span class="exp-hdr-sub">Five questions students ask themselves during the work period</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box">Teach these five questions explicitly during Foundation Lesson 2. Students learn to ask themselves these questions during the work period — not just when prompted by the teacher.</div>
+      <div class="steps-list" id="self-check"></div>
+    </div>
+  </div>
+
+  <!-- Engagement by mode -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">🔁</span>
+      <span class="exp-hdr-title">Engagement by mode</span>
+      <span class="exp-hdr-sub">Receptive and expressive — for Grade 4/5 students</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box">For Grade 4/5 students, engagement can be described in two modes. Use this language in conferences and reflections once the vocabulary is established.</div>
+      <div class="conf-type-grid">
+        <div class="conf-type-card" style="border-top-color:var(--lit-mid)">
+          <div class="conf-type-name" style="color:var(--lit)">Receptive Mode</div>
+          <div class="conf-type-when">Taking in information</div>
+          <div class="conf-type-desc">Reading, listening, viewing. Engagement in receptive mode means actively processing — asking questions, connecting, visualizing, monitoring understanding. Not just eyes on the page.</div>
+        </div>
+        <div class="conf-type-card" style="border-top-color:var(--sci-mid)">
+          <div class="conf-type-name" style="color:var(--sci)">Expressive Mode</div>
+          <div class="conf-type-when">Producing and sharing</div>
+          <div class="conf-type-desc">Speaking, writing, visually representing. Engagement in expressive mode means actively constructing meaning — drafting, revising, explaining thinking. Not just filling a page.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Barometer student -->
+  <div class="exp-section">
+    <div class="exp-hdr" onclick="toggleExpSection(this)">
+      <span class="exp-hdr-icon">🌡️</span>
+      <span class="exp-hdr-title">The barometer student</span>
+      <span class="exp-hdr-sub">The first student to break engagement — and what to do</span>
+      <span class="exp-hdr-tog">▼</span>
+    </div>
+    <div class="exp-body">
+      <div class="note-box"><strong>Every class has a barometer student</strong> — the first student to break engagement. This student measures the “weather” in the room. They are not the problem. They are the data. When the barometer student breaks engagement, it means the work period has reached its limit for the whole class — even the students who appear to still be working.<br><br><strong>What to do:</strong> Use the quiet signal. Come back to the group. Do a brief group check-in (Step 10 of the 10 Steps). Do not single out the barometer student — thank the whole group and record the time. This is your baseline for tomorrow.</div>
+      <div class="note-box"><strong>Building engagement over time:</strong> Start with 3–5 minutes in Week 1. Add 2–3 minutes per successful session. Use a visual timer students can see. Celebrate milestones as a group. By the end of September, the goal for Grade 4/5 is 20–25 minutes of sustained engaged independent reading.</div>
+    </div>
+  </div>
+</div>
+
+
+</div><!-- /main -->
+
+<script>
+// ── VIEW SWITCHING ──
+// Track which main view is active so we can return to it from ref views
+let lastMainView = 'overview';
+const MAIN_VIEWS = ['overview','sequence','about'];
+const REF_VIEWS  = ['tensteps','foundation','icharts','conferring','engagement'];
+
+function showView(id, fromEvent){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));
+  const el = document.getElementById('view-'+id);
+  if(el) el.classList.add('on');
+
+  // Update main nav
+  document.querySelectorAll('#main-nav .nav-btn').forEach(b=>b.classList.remove('on'));
+  if(MAIN_VIEWS.includes(id)){
+    lastMainView = id;
+    const btns = document.querySelectorAll('#main-nav .nav-btn');
+    const idx = MAIN_VIEWS.indexOf(id);
+    if(btns[idx]) btns[idx].classList.add('on');
+  }
+
+  // Update quick-ref strip highlights
+  document.querySelectorAll('.qref-btn').forEach(b=>{
+    b.classList.toggle('on', b.dataset.ref===id);
+  });
+
+  // Scroll to top of main content
+  const main = document.querySelector('.main');
+  if(main) main.scrollTop = 0;
+}
+
+function showViewById(id){
+  showView(id);
+}
+
+function showRef(id){
+  showView(id);
+}
+
+function showPhase(id, group){
+  const panels = {'step-tabs':['ind-panel','col-panel']};
+  panels[group].forEach(p=>document.getElementById(p).classList.remove('on'));
+  document.getElementById(id+'-panel').classList.add('on');
+  event.target.closest('.phase-tabs').querySelectorAll('.phase-tab').forEach(t=>{
+    t.classList.remove('on');
+    t.style.background='';t.style.color='';t.style.borderColor='';
+  });
+  event.target.classList.add('on');
+  event.target.style.background=id==='ind'?'var(--charcoal)':'var(--l5)';
+  event.target.style.color='#fff';
+  event.target.style.borderColor='transparent';
+}
+
+// ── TOGGLE HELPERS ──
+function toggleEl(el){
+  const body = el.closest('.fl-card,.day-card')?.querySelector('.fl-body,.day-body');
+  if(body){body.classList.toggle('open');el.querySelector('.fl-toggle,.day-toggle').textContent=body.classList.contains('open')?'▲':'▼';}
+}
+
+function toggleExpSection(hdr){
+  const body = hdr.nextElementSibling;
+  const tog  = hdr.querySelector('.exp-hdr-tog');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  hdr.classList.toggle('open', !isOpen);
+  tog.classList.toggle('open', !isOpen);
+}
+document.addEventListener('click',e=>{
+  const hdr=e.target.closest('.fl-hdr,.day-hdr');
+  if(hdr) toggleEl(hdr);
+  const lr=e.target.closest('.layer-row');
+  if(lr){
+    const idx=lr.dataset.idx;
+    showView('foundation');
+    document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+    document.querySelectorAll('.nav-btn')[2].classList.add('on');
+  }
+});
+
+// ── DATA ──
+
+const LAYERS = [
+  {num:1,name:'Relationships',when:'Day 1 — ongoing',color:'var(--l1)',bg:'var(--l1-bg)',desc:'Before any routine or structure can work, students need to feel known and safe. The first days are about learning names, building shared norms, establishing the land acknowledgement as practice — not performance — and showing students that this classroom is a place where everyone belongs.'},
+  {num:2,name:'Environment',when:'Before Day 1 + first week',color:'var(--l2)',bg:'var(--l2-bg)',desc:'The physical space teaches. Reading spots are set up. Book baskets are accessible and levelled. Math materials are in consistent locations. The quiet signal is chosen and tested. A blank I-chart frame is posted. Students can navigate the room without asking.'},
+  {num:3,name:'Daily Routines',when:'Day 1–3 (before Foundation Lessons)',color:'var(--l3)',bg:'var(--l3-bg)',desc:'Transitions, arrival, dismissal, and movement routines are taught first using the 10 Steps — on a low-stakes routine. This is your practice run with the 10-step framework before you use it for ELA. The quiet signal is practised until automatic.'},
+  {num:4,name:'Independent Learning',when:'Days 4–12',color:'var(--l4)',bg:'var(--l4-bg)',desc:'Five Foundation Lessons establish shared language. Then the 10 Steps launch Read to Self — the anchor ELA activity. Other ELA activities and Math are added one at a time, each with their own 10 Steps session. Engagement intervals build gradually.'},
+  {num:5,name:'Collaborative Learning',when:'Days 13–18',color:'var(--l5)',bg:'var(--l5-bg)',desc:'Once independent engagement is stable (20+ minutes), teach the Respectful Communication foundation lesson and apply the 10 Steps to Collaborative Learning. The Collaborative I-chart adds conversational and relational expectations to the student side.'},
+  {num:6,name:'Conferring',when:'Week 3 onward',color:'var(--l6)',bg:'var(--l6-bg)',desc:'Behavior Conferences begin first — when engagement breaks, you sit beside the student and confer about the engagement, not the content. Quick Checks follow — brief sweeps that tell you who is reading, what, and how long. Goal-setting conferences begin in Week 4 once independence is established.'},
+];
+
+const PRE_CHECKLIST = [
+  {title:'ELA environment',tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'}],items:[
+    'Levelled book baskets accessible, labelled, and stocked (include BC ecosystems anchor texts)',
+    'At least 3–5 good-fit books ready for every student before Day 1',
+    'Personal reading containers ready for each student (bag, bin, or folder)',
+    'Designated reading spots visible and set up around the room',
+    'IPICK anchor chart prepared but not yet posted — post on Day 6',
+    'Reading Strategies (CAFE) menu printed or displayed (needed by Week 4)',
+  ]},
+  {title:'Math environment',tags:[{text:'Math',bg:'var(--math-mid)',c:'#fff'}],items:[
+    'Base-ten blocks accessible and in consistent, labelled locations',
+    'Counters, number lines, and place value charts available',
+    'Fraction tiles, pattern blocks, and geometry tools stored and labelled',
+    'Math journals or notebooks ready for every student',
+    'Place value review activity prepared for the first Math by Myself session',
+  ]},
+  {title:'Anchor charts — prepare before Day 1, post as each lesson arrives',tags:[{text:'Routines',bg:'var(--l3)',c:'#fff'}],items:[
+    'Blank chart paper + two marker colours for the Transitions I-chart (Day 3)',
+    'Stack of blank chart paper for future I-charts — one per routine',
+    'Independence definition chart — blank, co-created on Day 4',
+    'Continuum of Engagement visual — print large, post permanently on Day 5',
+    'Five self-check questions chart — post on Day 5',
+    'S.P.A.C.E. acronym chart — post on Day 7',
+    'Purpose sentence stem — post on Day 8',
+    'Read to Self engagement log chart — post on Day 9',
+  ]},
+  {title:'Quiet signal',tags:[{text:'Routines',bg:'var(--l3)',c:'#fff'}],items:[
+    'One signal chosen: raised hand, chime, rain stick, clap pattern, or equivalent',
+    'Practised by you before Day 1 until it feels natural, not effortful',
+    'This signal does not change for the rest of the year — choose accordingly',
+  ]},
+  {title:'Timers and conferring tools',tags:[{text:'Independence',bg:'var(--l4)',c:'#fff'}],items:[
+    'Visual timer students can see (sand timer, projected timer, or classroom timer)',
+    'Conferring notebook set up: individual student tabs, group page, quick checks page',
+    'Reading Strategies (CAFE) goal cards ready — 1 per student, needed by Week 4',
+    'Field journal materials: notebooks or prepared sections, pencils, coloured pencils',
+  ]},
+  {title:'Relationships and community',tags:[{text:'Relationships',bg:'var(--l1)',c:'#fff'}],items:[
+    'Name tents for every student desk',
+    'Sticky notes and markers at each table',
+    'Local Nation land acknowledgement printed or ready to project',
+    'Picture book selected for first read-aloud (e.g. Shin-chi’s Canoe or locally vetted equivalent)',
+    'Large chart paper for class norms — post blank, fill on Day 2',
+  ]},
+]
+
+const WEEK_OVERVIEW = [
+  {wk:'Week 1',days:'Days 1–5',color:'var(--l3)',focus:'Relationships + Routines',items:['Land acknowledgement as practice','Quiet signal taught and automatized','Transitions lesson (10 Steps practice run)','Foundation Lesson 1: What is Independent?','Foundation Lesson 2: What is Engagement?']},
+  {wk:'Week 2',days:'Days 6–10',color:'var(--l4)',focus:'Foundation Lessons + First Launch',items:['Foundation Lesson 3: Material Management','Foundation Lesson 4: Choose a S.P.A.C.E.','Foundation Lesson 5: What is My Purpose?','10 Steps: Read to Self launch','Engagement interval: building 5 → 12 min']},
+  {wk:'Week 3',days:'Days 11–15',color:'var(--l4)',focus:'Building Independence',items:['Expand to Read to Someone (own 10 Steps session)','Math by Myself launch (10 Steps)','Behavior Conferences begin','Quick Checks begin','Engagement interval: building to 20 min']},
+  {wk:'Week 4',days:'Days 16–20',color:'var(--l5)',focus:'Collaborative + Goal-Setting',items:['Foundation Lesson 6: Respectful Communication','10 Steps: Collaborative Learning launch','First Reading Strategies (CAFE) goal-setting conferences','Work on Writing and Word Work launched','Inquiry content fully integrated']},
+];
+
+const DAYS = [
+  {
+    day:'Day 1', title:'First day \u2014 relationships and land',
+    tags:[{text:'Relationships',bg:'var(--l1)',c:'#fff'},{text:'Environment',bg:'var(--l2)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Arrival + Welcome',
+        what:'Students arrive to a calm, welcoming room. Every desk has a name tent and a sticky note that asks: \u201cWhat is one thing you are curious about in the world right now?\u201d',
+        say:'\u201cGood morning. I\u2019m glad you\u2019re here. Find your name, read the sticky note question, and write your answer. We\u2019ll share soon.\u201d',
+        lookFor:'Who settles quickly vs. who is scanning the room. Who reads the question vs. who ignores it. This is your first data.',
+        materials:'Name tents, sticky notes (1 per student), markers at each table'
+      },
+      {
+        time:'9:00\u20139:30', block:'Community Circle \u2014 getting to know the team',
+        what:'Whole-group circle (on the floor if possible). Each student shares their sticky note curiosity. Teacher shares theirs first. Record all curiosities on a shared anchor chart titled \u201cWe wonder about\u2026\u201d',
+        say:'\u201cThis chart is going to stay on our wall all year. Some of these questions will become our inquiry. Some will just be ours. All of them matter.\u201d',
+        lookFor:'Listen for questions connected to ecosystems, land, living things, community. These will anchor the September inquiry.',
+        materials:'Large chart paper, marker, tape'
+      },
+      {
+        time:'9:30\u20139:55', block:'Classroom tour \u2014 this space belongs to all of us',
+        what:'Walk students deliberately through every area: book baskets (show 2\u20133 example books), math materials (name and locate them), the blank I-chart paper posted on the wall, the space where the quiet signal will come from.',
+        say:'\u201cThis room is set up so you can work without asking me where things are. I will show you once. Then it\u2019s yours.\u201d',
+        lookFor:'Who asks clarifying questions about the space. Who gravitates toward the books. Who looks overwhelmed \u2014 note them for a private check-in.',
+        materials:'Prepared book baskets, math manipulatives in place, blank I-chart paper posted'
+      },
+      {
+        time:'9:55\u201310:15', block:'Recess',
+        what:'Outdoor time. Teacher circulates, greets students informally, learns names.',
+        say:'',
+        lookFor:'Social dynamics: who plays together, who plays alone, who needs connection.',
+        materials:''
+      },
+      {
+        time:'10:15\u201311:00', block:'Land acknowledgement as inquiry',
+        what:'Return to the circle. Read the local Nation\u2019s land acknowledgement aloud together. Then ask: \u201cWhose land are we on? What do we know? What don\u2019t we know?\u201d Record on a T-chart: What we know / What we want to find out.',
+        say:'\u201cA land acknowledgement is not a script. It\u2019s a question we keep asking. This year, part of our inquiry will be: what does it mean to be in relationship with this land?\u201d',
+        lookFor:'Prior knowledge about local First Peoples. Students who have personal connections to land and place. Students who are confused or disengaged \u2014 they may need more context before the inquiry resonates.',
+        materials:'Local Nation\u2019s land acknowledgement (printed or projected), T-chart paper'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch + outdoor time',
+        what:'',say:'',lookFor:'Continue informal relationship-building.',materials:''
+      },
+      {
+        time:'11:45\u201312:30', block:'Read-aloud + shared reading',
+        what:'Read aloud a picture book connected to BC land and First Peoples (e.g. <em>Shin-chi\u2019s Canoe</em> by Nicola I. Campbell, or a locally vetted First Peoples story). No agenda beyond listening and enjoying together.',
+        say:'\u201cI\u2019m going to read to you. Your only job is to listen.\u201d After: \u201cWhat stayed with you from that story?\u201d 2\u20133 responses only.',
+        lookFor:'Reading engagement. Who listens, who fidgets, who makes visible connections. This is baseline reading engagement data.',
+        materials:'Picture book, reading chair or rug space'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: introduction + name activities',
+        what:'Low-stakes math warm-up: students use base-ten blocks or number cards to represent numbers that are meaningful to them (age, birthday, address, etc.). Share and discuss. No assessment \u2014 this is about seeing how students interact with math materials.',
+        say:'\u201cMath is thinking. Today we are just going to play with numbers that belong to us.\u201d',
+        lookFor:'Comfort with manipulatives. Who needs explicit instruction on how to handle materials. Who is already strong with place value.',
+        materials:'Base-ten blocks, number cards, math journals (first entry: My number story)'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing reflection',
+        what:'Return to the circle. Each student takes one sticky note and answers: \u201cOne thing I noticed about this classroom that surprised me.\u201d Post on the wall. Teacher reads a few aloud.',
+        say:'\u201cTomorrow we are going to start building how this classroom works together. Tonight: notice something in the world that makes you curious. Be ready to share it.\u201d',
+        lookFor:'What students are attending to. What surprised them \u2014 this tells you what they expected vs. what they found.',
+        materials:'Sticky notes, wall space for display'
+      }
+    ]
+    ,prep:['Name tents ready for every student desk','Sticky notes (1 per student) on each desk with the curiosity question written','Large chart paper posted with “We wonder about…” heading','Local Nation land acknowledgement printed or projected','T-chart paper ready (What we know / What we want to find out)','Picture book selected and bookmarked (Shin-chi’s Canoe or equivalent)','Base-ten blocks or number cards accessible at math area','Student math journals or notebooks ready']
+  },
+  {
+    day:'Day 2', title:'Quiet signal + co-create our norms',
+    tags:[{text:'Routines',bg:'var(--l3)',c:'#fff'},{text:'Relationships',bg:'var(--l1)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Arrival + morning warm-up',
+        what:'Students arrive to: \u201cFind a spot in the room. Notice where you feel most comfortable right now. You don\u2019t have to explain it yet.\u201d This seeds Foundation Lesson 4 (S.P.A.C.E.) without naming it.',
+        say:'\u201cGood morning. Just notice \u2014 don\u2019t move anything, just notice.\u201d',
+        lookFor:'Where students naturally gravitate. This is pre-assessment data for their eventual S.P.A.C.E. choices.',
+        materials:''
+      },
+      {
+        time:'9:00\u20139:25', block:'Teach the quiet signal \u2014 explicitly',
+        what:'Whole group on the carpet. Introduce the quiet signal with full transparency. Explain what it is, what students do when they hear or see it, and why it matters. Practise 5\u20136 times: while students are talking, while they are moving, while they are sitting. Do not continue until every student responds consistently.',
+        say:'\u201cWhen I do this [signal], you stop what you are doing, look at me, and wait quietly. Not because I need to control the room \u2014 because <em>we</em> need to come back together. Let\u2019s practise until it feels automatic.\u201d',
+        lookFor:'Who catches the signal immediately vs. who needs a beat longer. Note anyone who seems resistant \u2014 a private check-in about the signal before Day 3 may help.',
+        materials:'Chosen quiet signal (chime, rain stick, raised hand + clap, etc.)'
+      },
+      {
+        time:'9:25\u201310:00', block:'Co-create class norms',
+        what:'Ask the whole group: \u201cWhat does this class need to feel like so we can all do our best work?\u201d Take all responses without judgment. Record on chart paper. After 8\u201310 responses, look for themes and consolidate into 3\u20135 agreements. These are <em>agreements</em>, not rules \u2014 language matters.',
+        say:'\u201cThese aren\u2019t my rules. They\u2019re our agreements. That means every one of us \u2014 including me \u2014 is responsible for living up to them.\u201d Post and reference throughout the day.',
+        lookFor:'What students value. Whose voices are missing from the conversation. Guide toward agreements that are positive and actionable, not prohibitive.',
+        materials:'Large chart paper, markers, wall space to post norms permanently'
+      },
+      {
+        time:'10:00\u201310:15', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:15\u201311:00', block:'Book shopping \u2014 first visit with IPICK introduction',
+        what:'Introduce the book baskets. Briefly introduce IPICK as a tool students will learn more about later this week \u2014 today is just a first visit. Students browse and each selects 2\u20133 books for a personal reading container (bag, bin, or folder). No pressure to read yet.',
+        say:'\u201cYour job today is to find books you might want to read. Don\u2019t overthink it \u2014 if it looks interesting, put it in. We\u2019ll talk about how to choose books really well later this week.\u201d',
+        lookFor:'Reading level comfort and book-selection patterns. Who avoids books entirely. Who immediately dives in. Who needs guidance locating appropriate-level texts.',
+        materials:'Levelled book baskets (BC ecosystems anchor texts included), personal reading containers for each student, IPICK chart prepared but not yet posted'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201312:30', block:'Read-aloud + first short independent reading',
+        what:'Read aloud for 10 minutes (continue from Day 1 text or new picture book). Then: \u201cNow it\u2019s your turn. Find a spot, open a book, and read for 5 minutes. Just see what it feels like.\u201d Set a visible timer. No I-chart yet \u2014 this is a baseline observation.',
+        say:'After: \u201cHow did that feel? What helped you focus? What made it hard?\u201d 3\u20134 responses. No judgment \u2014 pure data-gathering with students.',
+        lookFor:'Engagement levels without any structure in place. Who settles immediately, who wanders, who chooses not to open a book. This is your baseline for Read to Self.',
+        materials:'Books (from their containers), visual timer'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: place value warm-up',
+        what:'Introduce math journals. First entry: \u201cRepresent the number 1,284 in as many ways as you can.\u201d (Gr 4 adaptation: to 10,000; Gr 5: extend to larger numbers.) Students work individually. Share 3\u20134 strategies as a class.',
+        say:'\u201cIn math this year, we think out loud. Your journal is your thinking space \u2014 not a test. Mistakes here are interesting, not wrong.\u201d',
+        lookFor:'Conceptual understanding of place value. Who uses only standard form vs. who uses expanded, word form, models. This is baseline data for Math by Myself planning.',
+        materials:'Math journals, pencils, base-ten blocks available'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing + norms revisit',
+        what:'Return to the class norms chart. Read each agreement aloud. Ask: \u201cDid we live these today? Where did we do well? Where is there room to grow?\u201d Students give thumbs up/sideways/down for each.',
+        say:'\u201cTomorrow we are going to learn a very important tool that will help our whole class work together. Come ready to try something new.\u201d',
+        lookFor:'Honest self-assessment vs. performance. Who is genuinely reflective.',
+        materials:'Class norms chart'
+      }
+    ]
+    ,prep:['Quiet signal ready and practised (chime, rain stick, or chosen signal)','Large chart paper for class norms posted blank','Book baskets accessible and levelled — check every basket has appropriate-level books','Personal reading containers ready for every student (bags, bins, or folders)','IPICK chart prepared (not yet posted — save for Day 6)','Visual timer accessible and tested','Math journals ready for place value warm-up']
+  },
+  {
+    day:'Day 3', title:'Transitions lesson \u2014 10 Steps practice run',
+    tags:[{text:'Routines',bg:'var(--l3)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Arrival + morning circle',
+        what:'Brief check-in: \u201cOne word for how you arrived today.\u201d Popcorn around the circle. Teacher participates. 5 minutes maximum.',
+        say:'',lookFor:'Energy level of the class. Adjust your pacing today based on what you observe.',materials:''
+      },
+      {
+        time:'9:00\u20139:45', block:'10 Steps: Transitions lesson',
+        what:`Full 10-step lesson for the Transitions routine. Allow 40\u201345 minutes.
+<br><br><strong>Step 1 \u2014 Identify:</strong> "Today we are going to learn how to transition from one activity to another in our classroom."
+<br><strong>Step 2 \u2014 Urgency:</strong> "Every time we transition inefficiently, we lose 3\u20134 minutes. Over a year, that\u2019s more than 10 full school days. Today we fix that."
+<br><strong>Step 3 \u2014 I-Chart:</strong> Build together. Students side: Walk calmly, bring what you need, arrive ready, get started right away. Teacher side: Give clear directions, wait for everyone.
+<br><strong>Step 4 \u2014 Model desirable:</strong> One student volunteer demonstrates a perfect transition.
+<br><strong>Step 5 \u2014 Model undesirable then desirable:</strong> Same student shows a slow/distracted transition, then immediately shows the desirable one.
+<br><strong>Steps 6\u20138:</strong> Whole class practises a transition (carpet to desks). Use quiet signal to bring them back.
+<br><strong>Steps 9\u201310:</strong> Signal, return, group check-in.`,
+        say:'\u201cThis is the most important 40 minutes of the first week. Not because transitions matter \u2014 though they do \u2014 but because you are learning <em>how we learn together in this room</em>.\u201d',
+        lookFor:'Who catches on to the I-chart process quickly. Who struggles with the modelling steps. The transitions lesson reveals a lot about how students will respond to the Full ELA launch next week.',
+        materials:'Blank chart paper for Transitions I-chart, markers, quiet signal'
+      },
+      {
+        time:'9:45\u201310:00', block:'Recess \u2014 practise transitions getting there',
+        what:'Deliberately use the quiet signal and the transitions I-chart to move students to and from recess. Name what you are doing: \u201cLet\u2019s use our new transitions routine.\u201d',
+        say:'',lookFor:'Automaticity of the quiet signal in a real-life transition (not a practice run).',materials:''
+      },
+      {
+        time:'10:00\u201310:45', block:'Reteach + refine transitions as needed',
+        what:'If the transitions lesson went smoothly: do a second practice with a different transition (e.g. desks to carpet). If it needs work: return to the I-chart, identify the one behaviour that needs attention, and reteach that step only.',
+        say:'\u201cWe are going to practise again. Not because you failed \u2014 because routines only stick when we repeat them until they feel automatic.\u201d',
+        lookFor:'Which I-chart items are solid and which are still developing. Record this \u2014 it will inform whether you need a third transitions session before Day 4.',
+        materials:'Transitions I-chart (from the morning)'
+      },
+      {
+        time:'10:45\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'Another real transition to practise.',materials:''
+      },
+      {
+        time:'11:45\u201312:30', block:'Read-aloud + shared discussion',
+        what:'Continue the read-aloud text from Days 1\u20132. Focus on a comprehension conversation: \u201cWhat is the author doing here? What are they trying to help us understand?\u201d This is informal Reading Strategies (CAFE) Comprehension work before Reading Strategies (CAFE) is named.',
+        say:'',
+        lookFor:'Comprehension depth. Who makes connections? Who asks questions? Who summarises? This seeds the Reading Strategies (CAFE) goal-setting conferences in Week 4.',
+        materials:'Read-aloud text'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: place value + number patterns',
+        what:'Gr 4: skip-counting patterns and place value to 10,000. Gr 5: large number representation to 1,000,000. Students work in math journals. Use pair-share to compare strategies.',
+        say:'\u201cNotice how your partner thinks differently than you. Both ways can be right.\u201d',
+        lookFor:'Strategy diversity. Who is stuck in one representation. Who needs extension.',
+        materials:'Math journals, base-ten blocks, number lines posted'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing reflection \u2014 debrief transitions',
+        what:'Return to the Transitions I-chart. Students self-assess: which items did we live today? Where do we need more practice?',
+        say:'\u201cTomorrow we start learning the big ideas behind how independence works in this classroom. The transitions routine we built today is the first piece of the foundation.\u201d',
+        lookFor:'Student metacognition about the transitions lesson. Who understands the why, not just the what.',
+        materials:'Transitions I-chart'
+      }
+    ]
+    ,prep:['Blank chart paper posted for Transitions I-chart (write “Students | Teacher” headings only)','Two marker colours ready (one for student side, one for teacher side)','Quiet signal ready','Think through your student volunteer for Steps 4–5 modelling — who will you ask?','Non-fiction BC ecosystems text selected for read-aloud','Base-ten blocks and number lines posted in math area']
+  },
+  {
+    day:'Day 4', title:'Foundation Lesson 1 \u2014 What is Independent?',
+    tags:[{text:'Foundation',bg:'var(--l4)',c:'#fff'},{text:'Independence',bg:'var(--l4)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Morning meeting + transitions practice',
+        what:'Brief morning circle (5 min): share one curiosity from yesterday. Then practise the Transitions routine twice using the I-chart from Day 3.',
+        say:'',lookFor:'Transitions automaticity. Is the quiet signal becoming reliable?',materials:'Transitions I-chart'
+      },
+      {
+        time:'9:00\u20139:45', block:'Foundation Lesson 1 \u2014 What is Independent? (full lesson)',
+        what:`<strong>See the Foundation Lessons tab for the complete Understand / Prepare / Teach / Support breakdown.</strong><br><br>
+<strong>Teach (20 min):</strong> Open with the question. Record key words. Add nuance: independent \u2260 alone, independent \u2260 silent. Co-create a class definition (2\u20133 sentences). Post it near the future I-chart wall.<br><br>
+<strong>Inquiry bridge (10 min):</strong> \u201cThe ecosystems we will study this month are full of organisms that are independent and interdependent. A salmon is independent \u2014 it swims alone. And it depends on the whole river system to survive. What does that mean for us as learners?\u201d Students pair-share. Share 2\u20133 responses.<br><br>
+<strong>Closing (5 min):</strong> Each student writes or draws their personal definition of independence in their journal. Share 2\u20133.`,
+        say:'\u201cThis definition we just wrote together is going to be the foundation of everything we build in September. You are going to come back to it again and again.\u201d',
+        lookFor:'Who grasps the independence / alone distinction. Who conflates independence with isolation. Who is connecting it to the inquiry. These students will help anchor class discussions.',
+        materials:'Chart paper, markers, student journals, pencils'
+      },
+      {
+        time:'9:45\u201310:00', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:00\u201311:00', block:'Literacy: first independent reading attempt',
+        what:'After the lesson on independence, try a short independent reading session \u2014 no I-chart, no structure yet, just apply the new definition. \u201cYou just said what independence means. Let\u2019s see what it feels like. 8 minutes. Go to your reading spot.\u201d Set timer.',
+        say:'After: \u201cWere you independent? Use the definition we made. Were you in charge of your own learning? What helped? What got in the way?\u201d',
+        lookFor:'How students self-assess against the definition they just co-created. Who is honest vs. who performs compliance. This is critical pre-launch data.',
+        materials:'Students\u2019 reading containers, visual timer'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201312:30', block:'Read-aloud + inquiry connection',
+        what:'Read a non-fiction text about BC ecosystems (e.g. a short article about salmon runs, old-growth forests, or coastal ecosystems). Think-aloud as you read: \u201cI\u2019m noticing\u2026 I\u2019m wondering\u2026\u201d Students practise on sticky notes.',
+        say:'',
+        lookFor:'Non-fiction reading strategies. Who uses sticky notes purposefully vs. randomly. Seeds for Reading Strategies (CAFE) Comprehension goals.',
+        materials:'Non-fiction BC ecosystems texts, sticky notes'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: multiplication fluency introduction',
+        what:'Introduce the multiplication fluency practice that will become part of Math by Myself. Gr 4: facts to 9\u00d79. Gr 5: extend to multi-digit. Students self-assess where they are strong and where they need work \u2014 this is their first math goal.',
+        say:'\u201cKnowing your facts isn\u2019t the goal of math. It\u2019s a tool that helps you think faster. Let\u2019s see where you are.\u201d',
+        lookFor:'Fact fluency level as baseline data. Who needs intervention. Who can extend.',
+        materials:'Multiplication practice sheets or math journals, manipulatives available'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: revisit the independence definition',
+        what:'Return to the class definition posted on the wall. Ask: \u201cDid we live this definition today? When did you feel most independent? When did you feel least?\u201d',
+        say:'\u201cTomorrow we\u2019re going to add a new word to our classroom vocabulary: <em>engagement</em>. It connects to everything we\u2019ve been building.\u201d',
+        lookFor:'Depth of self-reflection. Who can name a specific moment vs. who gives a global answer.',
+        materials:'Independence definition chart'
+      }
+    ]
+    ,prep:['Post the word INDEPENDENT on the board or chart paper','Blank chart paper ready for co-creating the independence definition','Student journals open to a fresh page at each spot','Non-fiction BC ecosystems article printed or bookmarked (3–4 copies minimum)','Sticky notes at each table for the ecosystems read-aloud','Multiplication practice materials ready (sheets or journals)']
+  },
+  {
+    day:'Day 5', title:'Foundation Lesson 2 \u2014 What is Engagement?',
+    tags:[{text:'Foundation',bg:'var(--l4)',c:'#fff'},{text:'Engagement',bg:'var(--teal)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Morning meeting + transitions',
+        what:'Morning circle (5 min). Practise transitions. Revisit the independence definition: \u201cOne word that connects to independence for you today.\u201d',
+        say:'',lookFor:'',materials:''
+      },
+      {
+        time:'9:00\u20139:50', block:'Foundation Lesson 2 \u2014 What is Engagement? (full lesson)',
+        what:`<strong>See Foundation Lessons tab for full Understand / Prepare / Teach / Support plan.</strong><br><br>
+<strong>Teach (25 min):</strong> Introduce the Continuum: Disengaged \u2192 Passive \u2192 Engaged. Give honest, concrete examples of each. Post the visual continuum on the wall permanently \u2014 it stays all year.<br><br>
+<strong>Five questions (5 min):</strong> Post and teach the five self-check questions one at a time. Students practise saying them aloud.<br><br>
+<strong>Practise with a read-aloud (15 min):</strong> Read aloud for 5 minutes. Pause. Students silently answer the five questions and place themselves on the continuum. Pair-share: \u201cWhere were you? What moved you there?\u201d Share 3\u20134 responses. No judgment.`,
+        say:'\u201cPassive is not bad. It is honest. The continuum is not a grade \u2014 it is a compass. We use it to know where we are and what direction to go.\u201d',
+        lookFor:'Students who self-assess as \u201calways Engaged\u201d \u2014 this may signal performance rather than reflection. Students who honestly report Passive or Disengaged \u2014 these are your most self-aware learners right now.',
+        materials:'Continuum of Engagement visual (large, for permanent posting), five self-check questions chart, read-aloud text'
+      },
+      {
+        time:'9:50\u201310:00', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:00\u201311:00', block:'Literacy: independent reading with self-check',
+        what:'Students go to their reading spots (no formal S.P.A.C.E. lesson yet \u2014 they choose naturally). 10 minutes of independent reading. Midway: teacher uses quiet signal, asks students to answer the five questions silently. Resume. Close with group check-in: \u201cDid using the questions change anything?\u201d',
+        say:'',
+        lookFor:'First formal use of the self-check questions during actual reading. Who uses them genuinely vs. who goes through the motions. Record 3\u20134 observations in your notebook.',
+        materials:'Reading containers, visual timer, five self-check questions posted'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201312:30', block:'Read-aloud: ecosystems text + engagement tracking',
+        what:'Read aloud a BC ecosystems text. Students track their own engagement using a simple T-chart in their journal: \u201cWhat engaged me / What pulled me away.\u201d Share findings.',
+        say:'',
+        lookFor:'What kinds of content or language engage different students. Vocabulary gaps in the ecosystems topic.',
+        materials:'BC ecosystems text, student journals'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: place value patterns + math journal',
+        what:'Students work independently in math journals on a place value exploration: \u201cWhat happens when you multiply any number by 10? By 100?\u201d Gr 5 extension: by 0.1? Record patterns, explain in words.',
+        say:'\u201cYour job today is to notice something. Mathematicians notice patterns. Write down what you notice, even if you don\u2019t know what it means yet.\u201d',
+        lookFor:'Mathematical language. Who uses words like \u201cpattern,\u201d \u201calways,\u201d \u201cI notice.\u201d This seeds Math Writing later.',
+        materials:'Math journals'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: engagement debrief + preview',
+        what:'Return to the Continuum. \u201cWhere were you most engaged today? What put you there?\u201d Students share one example. Record notable responses on a sticky note for your conferring notebook.',
+        say:'\u201cTomorrow we are going to talk about materials \u2014 how to choose your books well, and how to set yourself up so you can be engaged from the moment the work period begins.\u201d',
+        lookFor:'',materials:'Continuum visual'
+      }
+    ]
+    ,prep:['Continuum of Engagement visual printed large — this posts permanently today','Five self-check questions chart prepared (one question per strip or all on one chart)','Read-aloud text selected and bookmarked','Student journals open to a fresh page','Visual timer accessible','BC ecosystems text for engagement tracking activity']
+  },
+  {
+    day:'Day 6', title:'Foundation Lesson 3 \u2014 Material Management',
+    tags:[{text:'Foundation',bg:'var(--l4)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Morning meeting',
+        what:'Quick engagement check-in: each student places themselves on the Continuum (point to the posted visual) for how they arrived today. No explanation required \u2014 just a gesture. Teacher notes the spread.',
+        say:'',lookFor:'Who arrives Disengaged consistently. Plan a brief connection conversation before or during the day.',materials:'Continuum visual'
+      },
+      {
+        time:'9:00\u20139:50', block:'Foundation Lesson 3 \u2014 Material Management + IPICK (full lesson)',
+        what:`<strong>See Foundation Lessons tab for full plan.</strong><br><br>
+<strong>Introduce IPICK (10 min):</strong> Post the chart. Walk through each letter with an example. Model thinking aloud: pick up a book and go through IPICK out loud \u2014 both a good-fit and a poor-fit choice.<br><br>
+<strong>Book shopping session (20 min):</strong> Students visit baskets and select 3\u20135 books using IPICK. Teacher circulates: \u201cTell me about this one. How did IPICK guide your choice?\u201d<br><br>
+<strong>Debrief (10 min):</strong> Each student holds up one book and shares one IPICK reason for choosing it.`,
+        say:'\u201cManaging your materials is part of independence. When you arrive at your reading spot ready to read, you\u2019re already being independent.\u201d',
+        lookFor:'Who chooses books only by cover/pictures. Who struggles to find good-fit books. Who needs smaller basket selection (3 choices vs. 20). Note students whose containers need supplementing \u2014 add books before Day 9.',
+        materials:'Levelled book baskets (BC ecosystems texts included), personal reading containers, IPICK anchor chart (post permanently today)'
+      },
+      {
+        time:'9:50\u201310:00', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:00\u201311:00', block:'Literacy: independent reading + IPICK reflection',
+        what:'12-minute independent reading session. After: students do a quick IPICK check on one of their books \u2014 is it still a good fit? If not, how would they change their selection? Share 3\u20134.',
+        say:'',
+        lookFor:'IPICK application. Are students actually checking their book comprehension, or just claiming it fits?',
+        materials:'Reading containers, visual timer'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Read-aloud + vocabulary exploration',
+        what:'Read from an ecosystems text. Focus on unfamiliar vocabulary: stop at 3\u20134 words and think aloud using context clues. Students try with sticky notes.',
+        say:'\u201cVocabulary is one of the things we\u2019ll be working on all year through Reading Strategies (CAFE). Today is just noticing.\u201d',
+        lookFor:'Vocabulary strategies students already use. Who skips unknown words vs. who pauses.',
+        materials:'Ecosystems text, sticky notes'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: multiplication review + math journal',
+        what:'Students practise their self-identified multiplication fact gaps from Day 4. Use a partner game (e.g. multiplication war with cards) for 15 min, then 15 min solo journal work.',
+        say:'',lookFor:'Fact fluency progress. Partner interaction quality.',
+        materials:'Number cards or dice, math journals'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: materials check',
+        what:'Students open their reading container and do one final IPICK check on every book. Any swaps needed? Teacher assists with replacements.',
+        say:'\u201cTomorrow: where you work is just as important as what you work on. Come ready to think about your space.\u201d',
+        lookFor:'Who has a well-curated container vs. who still needs support.',materials:''
+      }
+    ]
+    ,prep:['IPICK anchor chart ready to post permanently today','Book baskets fully stocked — add any BC ecosystems titles not yet there','Personal reading containers accessible for book shopping','Non-fiction ecosystems text for vocabulary exploration','Sticky notes at every table','Number cards or dice ready for multiplication partner game']
+  },
+  {
+    day:'Day 7', title:'Foundation Lesson 4 \u2014 Choose a Good-Fit S.P.A.C.E.',
+    tags:[{text:'Foundation',bg:'var(--l4)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Morning meeting',
+        what:'\u201cWhere in this room do you think you focus best? Just point.\u201d Quick poll with no explanation. Then transitions practice.',
+        say:'',lookFor:'',materials:''
+      },
+      {
+        time:'9:00\u20139:50', block:'Foundation Lesson 4 \u2014 S.P.A.C.E. (full lesson)',
+        what:`<strong>See Foundation Lessons tab for full plan.</strong><br><br>
+<strong>Introduce S.P.A.C.E. (10 min):</strong> Post the acronym. Walk through each letter with real classroom examples: \u201cThis corner is low Sound. The table near the window has good Eyes \u2014 natural light. The floor cushions offer Comfort options.\u201d<br><br>
+<strong>Classroom walk (15 min):</strong> Students move through the room and try 2\u20133 spots. At each one, they answer: \u201cHow does this feel for my engagement?\u201d Use the continuum language.<br><br>
+<strong>Spot mapping (10 min):</strong> Students record their top 2 S.P.A.C.E. choices in their journal with a reason for each. Share 3\u20134.`,
+        say:'\u201cYour SPACE choice is an engagement decision. It is not a social decision. Where you sit affects how you learn.\u201d',
+        lookFor:'Who chooses spots strategically vs. socially. Begin noting likely issues: friend clusters, high-traffic spots, spots near distractions. You will address these in individual behaviour conferences later.',
+        materials:'S.P.A.C.E. anchor chart (post permanently), student journals'
+      },
+      {
+        time:'9:50\u201310:00', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:00\u201311:00', block:'Literacy: reading in chosen S.P.A.C.E. spots',
+        what:'First reading session where students actively choose their S.P.A.C.E. spot using the criteria from the lesson. 12\u201315 minutes. Use quiet signal and check-in: \u201cDid your spot help? Would you choose the same one tomorrow?\u201d',
+        say:'',
+        lookFor:'Match between spot choice and engagement level. Note any obvious mismatches. These become the first Behaviour Conference conversations next week.',
+        materials:'Reading containers, visual timer, S.P.A.C.E. chart visible'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: field journal introduction',
+        what:'Introduce the field journal as a tool scientists use to observe and record. Students set up their field journal (a section of their notebook or a dedicated journal). First entry: a sketch and written observation of something in the classroom connected to living things (a plant, a view out the window).',
+        say:'\u201cField scientists are independent, engaged observers. Sound familiar? We\u2019re practising both skills at once.\u201d',
+        lookFor:'Observation quality. Who draws details vs. who draws symbols. Who notices more than what is obvious.',
+        materials:'Field journals or prepared notebook sections, pencils, coloured pencils'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: place value + word problems',
+        what:'Introduce a place value word problem connected to ecosystems: \u201cA salmon run releases 284,600 eggs. How would you represent that number? What is the value of each digit?\u201d Students work independently in journals, then share strategies.',
+        say:'',lookFor:'Transfer of place value concepts to word problem context.',
+        materials:'Math journals, ecosystems context problems prepared'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing',
+        what:'\u201cTomorrow\u2019s foundation lesson is the last one before the big Read to Self launch. It\u2019s about purpose \u2014 why you are doing the work. Come ready to think about what you are working on and why.\u201d',
+        say:'',lookFor:'',materials:''
+      }
+    ]
+    ,prep:['S.P.A.C.E. anchor chart prepared and ready to post permanently today','6–8 designated work areas identified and any furniture adjustments made','Student journals open for spot mapping activity','Field journals or prepared notebook sections ready for every student','Pencils and coloured pencils accessible','Ecosystems word problem prepared for math (salmon run or equivalent)']
+  },
+  {
+    day:'Day 8', title:'Foundation Lesson 5 \u2014 What is My Purpose?',
+    tags:[{text:'Foundation',bg:'var(--l4)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Morning meeting',
+        what:'Transitions practice + brief revisit of all four foundation concepts so far: independence, engagement, materials, S.P.A.C.E. Students give a one-word summary for each.',
+        say:'\u201cWe have been building a foundation this week. Today is the last brick before we launch.\u201d',
+        lookFor:'Which concepts have stuck and which need reinforcement before Day 9.',materials:''
+      },
+      {
+        time:'9:00\u20139:50', block:'Foundation Lesson 5 \u2014 What is My Purpose? (full lesson)',
+        what:`<strong>See Foundation Lessons tab for full plan.</strong><br><br>
+<strong>Teach (15 min):</strong> Show three example purposes (Read to Self, Math by Myself, writing). Discuss what makes a purpose specific vs. vague. \u201cI am reading\u201d \u2260 a purpose. \u201cI am reading to find out how salmon return to their home river\u201d = a purpose.<br><br>
+<strong>Purpose practice (15 min):</strong> Students write their purpose for today\u2019s upcoming reading session before they move to their S.P.A.C.E. spot. 60 seconds. Share 4\u20135. Post the sentence stem: \u201cI am [task] to/because [reason].\u201d<br><br>
+<strong>Set a Purpose in action (10 min):</strong> Independent reading with purpose. Students read. Close with: \u201cDid your purpose help? Did it change?\u201d`,
+        say:'\u201cTomorrow we are going to do something that will change how this classroom works. Everything we have built this week leads to it. You are ready.\u201d',
+        lookFor:'Quality of stated purposes. Who articulates specific, learning-focused purposes vs. who gives task-based purposes. Specific purpose = stronger engagement. Note students who struggle \u2014 they will need extra support in the Read to Self launch.',
+        materials:'Purpose sentence stem posted, student journals, reading containers'
+      },
+      {
+        time:'9:50\u201310:00', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:00\u201311:00', block:'Literacy: purpose-led reading session',
+        what:'Full 15-minute independent reading session with purpose-setting. Before: \u201cWrite your purpose.\u201d During: teacher observes (does not intervene). After: quiet signal, group check-in.',
+        say:'',
+        lookFor:'Engagement levels in the best conditions yet (purpose + SPACE + materials). This is your clearest picture of the baseline before the formal launch. Who is at 15 minutes of genuine engagement? Who breaks at 5? This determines your Day 9 starting interval.',
+        materials:'Reading containers, visual timer'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Field journal + ecosystems inquiry',
+        what:'Students go outside (or to a window) and make their first real field observation: sketch + 3 observations of a living system (a tree, a garden bed, a bird, anything alive). Bring back and share. Record the class\u2019s observations on a shared chart.',
+        say:'\u201cScientists who study ecosystems do exactly what you are doing: they observe before they explain. Your job today is to see, not to know.\u201d',
+        lookFor:'Observation quality and detail. Who notices relationships vs. who notices individual objects.',
+        materials:'Field journals, pencils, coloured pencils, outdoor access or window spot'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: introduce Math by Myself preview',
+        what:'Preview Math by Myself: \u201cStarting next week, you will have a work period where you work on math independently \u2014 just like Read to Self but for math. Today we are going to set up what you will work on.\u201d Students identify one math goal for Math by Myself (place value, multiplication fluency, etc.).',
+        say:'\u201cYour Math by Myself goal is like your reading purpose \u2014 it is specific, it is yours, and it will guide your work.\u201d',
+        lookFor:'Math goal clarity. Who sets specific goals vs. who says \u201cget better at math.\u201d',
+        materials:'Math journals, math goals sticky note (posted in journal)'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: preview the launch',
+        what:'\u201cTomorrow is the most important lesson of September. We are going to officially launch Read to Self using everything we have built this week. Come ready. Bring your reading container. Know your purpose. Know your S.P.A.C.E. spot.\u201d',
+        say:'',lookFor:'Anticipation and buy-in. Who is excited vs. who is anxious.',materials:''
+      }
+    ]
+    ,prep:['Purpose sentence stem posted: “I am [task] to/because [reason]”','All four Foundation Lesson anchor charts visible (Independence, Engagement, IPICK, S.P.A.C.E.)','Student journals open for purpose-writing practice','Outdoor access arranged or window observation spot identified for field journal','Math goals sticky note ready for every student journal','Visual timer ready — tomorrow’s ELA launch: set it to 5 minutes']
+  },
+  {
+    day:'Day 9', title:'Read to Self \u2014 10 Steps launch',
+    tags:[{text:'10 Steps',bg:'var(--charcoal)',c:'#fff'},{text:'ELA',bg:'var(--lit-mid)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Arrival + preparation',
+        what:'Students arrive. Quiet individual preparation: check reading container (IPICK), identify S.P.A.C.E. spot for today, write purpose in journal. Teacher is visible but not interrupting.',
+        say:'\u201cGood morning. You know what to do.\u201d',
+        lookFor:'Independence of the preparation routine. Who needs prompting. This is your first data on how well the foundation lessons landed.',
+        materials:'Reading containers, journals, purpose sentence stem still posted'
+      },
+      {
+        time:'9:00\u201310:00', block:'Read to Self \u2014 10 Steps (the anchor launch)',
+        what:`This is the most important 50 minutes of September. Do not rush it. Move through all 10 steps deliberately.<br><br>
+<strong>Step 1:</strong> "Today we are launching Read to Self."<br>
+<strong>Step 2:</strong> "When you can read independently for 20 minutes every day, you will read 3+ hours of books every week. That changes everything about what you know and who you become."<br>
+<strong>Step 3:</strong> Build the I-chart together. Students generate the items. Guide with questions. Record in student language. (See I-Charts tab for expected outcomes.)<br>
+<strong>Step 4:</strong> One volunteer models every I-chart item perfectly.<br>
+<strong>Step 5:</strong> Same volunteer models distracted Read to Self (looking around, moving, flipping pages without reading). Class names what they see. Same volunteer immediately shows the desirable version.<br>
+<strong>Step 6:</strong> Students go to their S.P.A.C.E. spots. 60 seconds. Everyone seated and ready.<br>
+<strong>Step 7:</strong> Set the visual timer: 5 minutes. Say: "Go." Then step back.<br>
+<strong>Step 8:</strong> Stay at the edge of the room. Watch. Do not approach students.<br>
+<strong>Step 9:</strong> At 5 minutes (or earlier if engagement breaks): quiet signal. Wait.<br>
+<strong>Step 10:</strong> "How did it go? What I-chart items did you live? What was hard?"`,
+        say:'After: \u201cToday you did 5 minutes. Tomorrow we go for 7. Every day we add a little more. By the end of September, this room will look like a library.\u201d',
+        lookFor:`Every student. Who settled immediately. Who moved. Who didn\u2019t open a book. Who was your barometer student (first to break engagement \u2014 note their name and the minute they broke). Record the time you made it.`,
+        materials:'Read to Self I-chart (blank chart paper + markers for building live), visual timer, reading containers'
+      },
+      {
+        time:'10:00\u201310:15', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:15\u201311:00', block:'Second Read to Self round',
+        what:'Brief revisit of the I-chart (2 min). \u201cWe made it to 5 minutes. Round 2: let\u2019s try for 7. Same routine.\u201d Students go to spots. Timer. Quiet signal. Check-in.',
+        say:'\u201cTwo rounds today because you are building a new skill. You don\u2019t build a muscle with one rep.\u201d',
+        lookFor:'Did anything change from Round 1? Is the barometer student in the same spot? Did any students choose different S.P.A.C.E. spots? Record time.',
+        materials:'Visual timer, I-chart visible'
+      },
+      {
+        time:'11:00\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Read-aloud + ecosystems discussion',
+        what:'Read aloud a connected ecosystems text. Focus: \u201cWhat questions does this raise for you?\u201d Students record questions on sticky notes. Share and sort by theme. This feeds the inquiry driving question for the unit.',
+        say:'',lookFor:'Quality of questions generated. Who asks surface vs. deep questions.',
+        materials:'Ecosystems text, sticky notes, sorting space on wall'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: place value review \u2014 first solo Math by Myself preview',
+        what:'Students work independently in math journals for 10 minutes (preview of Math by Myself). Gr 4: represent five 4-digit numbers in expanded form. Gr 5: represent five 6-digit numbers. Self-check with a partner.',
+        say:'',lookFor:'How students handle solo math work. Engagement level compared to Read to Self.',
+        materials:'Math journals'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: celebrate and record',
+        what:'Whole group: \u201cToday we launched Read to Self. How did it feel? What is one thing you did well? What will you work on tomorrow?\u201d Record the class time on a \u201cRead to Self engagement log\u201d chart posted on the wall: Day 9: 5 minutes.',
+        say:'',
+        lookFor:'Student ownership of the routine. Who already feels pride in it.',
+        materials:'Read to Self engagement log chart (large paper, posted permanently)'
+      }
+    ]
+    ,prep:['Read to Self I-chart: blank chart paper with “Students | Teacher” — nothing else','Two marker colours ready for I-chart building','Visual timer set to 5 minutes exactly','All S.P.A.C.E. spots clear and accessible','Reading containers at student spots or accessible','Read to Self engagement log chart posted (large paper with Day/Time columns)','Think through your volunteer for Steps 4–5 — who models best in this class?','BC ecosystems books in baskets and reading containers']
+  },
+  {
+    day:'Day 10', title:'Read to Self \u2014 extend + observe',
+    tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'},{text:'Independence',bg:'var(--l4)',c:'#fff'}],
+    schedule:[
+      {
+        time:'8:30\u20139:00', block:'Arrival + preparation',
+        what:'Same routine as Day 9: container check, S.P.A.C.E. choice, purpose in journal. Teacher circulates and greets students individually.',
+        say:'',lookFor:'Is the preparation routine becoming independent? Who still needs a prompt?',materials:''
+      },
+      {
+        time:'9:00\u20139:45', block:'Read to Self \u2014 extend to 7 minutes',
+        what:'Brief I-chart revisit (90 seconds \u2014 not a re-teach, a reminder). Students to spots. Timer: 7 minutes. Teacher stays at the perimeter. Quiet signal. Check-in: add today\u2019s time to the engagement log.',
+        say:'\u201cYesterday: 5 minutes. Today: 7. The goal is 20. We are building.\u201d',
+        lookFor:'Who is the barometer student today? Same person as yesterday? Different? How long before they break engagement? This is your most important data point. Begin noting what precedes the break (fidget, look up, move, flip pages).',
+        materials:'Visual timer, I-chart visible, engagement log chart'
+      },
+      {
+        time:'9:45\u201310:00', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:00\u201310:45', block:'Second Read to Self round',
+        what:'Second round: 8\u20139 minutes. Before: \u201cSame I-chart. New goal. Go.\u201d No re-teaching unless something broke significantly in round 1.',
+        say:'',
+        lookFor:'Trend from round 1 to round 2. Does engagement improve or decrease in the second round? This tells you about fatigue vs. warming up.',
+        materials:'Timer, I-chart'
+      },
+      {
+        time:'10:45\u201311:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: introduce the driving question',
+        what:'Introduce the September unit driving question: <em>\u201cWho are we and where do we belong?\u201d</em> Connect to what students have been observing in field journals and read-alouds. Pair-share: what does this question mean to you right now?',
+        say:'',lookFor:'Depth of initial engagement with the driving question.',
+        materials:'Driving question posted prominently'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: Math by Myself launch preview + goal setting',
+        what:'Students refine their Math by Myself goals (set in Day 8) based on what they learned in Day 9\u2019s solo math work. Then 10 minutes of independent goal-directed math practice.',
+        say:'',lookFor:'',materials:'Math journals'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: engagement log + reflection',
+        what:'Update the engagement log: Day 10 times for both rounds. Students write a 2-sentence reflection in their journal: \u201cWhat helped my engagement today? What will I try tomorrow?\u201d',
+        say:'',lookFor:'',materials:'Engagement log, journals'
+      }
+    ]
+    ,prep:['Read to Self I-chart visible from all spots','Visual timer ready — target 7 minutes for Round 1, 8–9 for Round 2','Engagement log chart accessible to add today’s times','September driving question prepared to post: “Who are we and where do we belong?”','Math journals ready with yesterday’s Math by Myself goal visible']
+  },
+  {
+    day:'Day 11', title:'Read to Self continues + Read to Someone preview',
+    tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'},{text:'Independence',bg:'var(--l4)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:45', block:'Read to Self \u2014 extend to 10 minutes',
+        what:'Standard routine. Target: 10 minutes. Two rounds. Update engagement log.',
+        say:'',
+        lookFor:'Who has plateaued (breaking at the same point each day). These are your first Behaviour Conference candidates for Week 3.',
+        materials:'Visual timer, I-chart, engagement log'
+      },
+      {
+        time:'10:00\u201310:45', block:'Preview Read to Someone',
+        what:'Brief introduction \u2014 no 10 Steps today, just a preview. \u201cNext week we are going to add a second ELA activity called Read to Someone. Today I want to show you what it looks like.\u201d Demonstrate with a student volunteer: read a page, check your partner (ask a question about what you read), switch. That\u2019s it.',
+        say:'\u201cRead to Someone is still independent learning \u2014 you are responsible for your own engagement and your partner\u2019s. It takes the same skills you have been building all week.\u201d',
+        lookFor:'Reaction to partner reading. Who is excited? Who is nervous? This tells you about social dynamics before you assign first partners.',
+        materials:'A short text for demonstration'
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems: field journal observations + share',
+        what:'Students work in field journals independently for 15 minutes (outdoor or window). Share observations in small groups. Identify one pattern noticed by the group.',
+        say:'',lookFor:'',materials:'Field journals'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math by Myself \u2014 first official session',
+        what:'Launch Math by Myself using the same framework as Read to Self (brief routine reminder, purpose, to spots, timer). Start at 8 minutes. Check-in after.',
+        say:'\u201cSame routine, new subject. The I-chart is the same as Read to Self \u2014 you already know how to do this.\u201d',
+        lookFor:'Transfer of independence skills from reading to math. Who struggles with math independence vs. reading independence.',
+        materials:'Math journals, manipulatives, visual timer'
+      }
+    ]
+    ,prep:['Visual timer ready — target 10 minutes','Engagement log accessible','Short text prepared for Read to Someone demonstration (1–2 pages)','Partner assignments planned — teacher-chosen pairs for Day 17 launch','Field journals accessible for outdoor/window observation','Math by Myself materials ready: journals, manipulatives, fact fluency activities']
+  },
+  {
+    day:'Day 12', title:'Read to Self builds + Word Work introduction',
+    tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:45', block:'Read to Self \u2014 extend to 12 minutes',
+        what:'Standard routine. Target: 12 minutes. One long round if the class is ready; two shorter rounds if engagement is still uneven.',
+        say:'',lookFor:'Barometer student trend. Are the same students breaking engagement each day?',materials:'Visual timer, engagement log'
+      },
+      {
+        time:'10:00\u201310:45', block:'Word Work introduction',
+        what:'Introduce Word Work as a ELA activity. Show the Word Work station: spelling patterns, word sorts, morphology activities. Brief 10 Steps preview (just Steps 1\u20133 today \u2014 identify, urgency, first I-chart items). Full 10 Steps for Word Work come later in the week.',
+        say:'\u201cWord Work is about understanding how words are built. When you know the parts, you can figure out words you\u2019ve never seen before.\u201d',
+        lookFor:'',materials:'Word Work station set up and accessible'
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: research begins',
+        what:'Students choose one aspect of BC ecosystems to investigate (teacher-guided options: salmon, old-growth forest, coastal wetland, grassland). Begin with 2\u20133 sources. Record initial findings in field journals.',
+        say:'',lookFor:'Research habits. Who reads vs. who skims. Who records vs. who reads passively.',
+        materials:'Non-fiction BC ecosystems books and articles, field journals'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: Math by Myself + Math Writing introduction',
+        what:'Math by Myself (10 minutes). Then introduce Math Writing: \u201cExplain how you solved one of today\u2019s problems in words.\u201d Students write 3\u20134 sentences.',
+        say:'\u201cMath Writing is not about getting the right answer. It\u2019s about showing your thinking. Even if the answer is wrong, the thinking is valuable.\u201d',
+        lookFor:'Mathematical language in writing. Who writes procedures vs. who writes thinking.',
+        materials:'Math journals'
+      }
+    ]
+    ,prep:['Visual timer ready — target 12 minutes','Word Work station set up: spelling patterns, word sorts, morphology activities labelled and accessible','BC ecosystems non-fiction books and articles available for research','Student field journals accessible','Math Writing prompt prepared: “Explain how you solved one problem in words”']
+  },
+  {
+    day:'Day 13', title:'Read to Self at 15 minutes + Work on Writing introduction',
+    tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'},{text:'Writing',bg:'var(--lit-mid)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:45', block:'Read to Self \u2014 target 15 minutes',
+        what:'Standard routine. Target: 15 minutes. Two rounds if needed. Students beginning to feel the achievement of sustained independent engagement.',
+        say:'\u201cTwo weeks ago, you had never done this. Today: 15 minutes. This is what independence looks like in practice.\u201d',
+        lookFor:'Who has made the biggest growth from Day 9. Name it specifically in the group check-in.',materials:'Timer, engagement log'
+      },
+      {
+        time:'10:00\u201310:45', block:'Work on Writing \u2014 introduction',
+        what:'Introduce Work on Writing as a ELA activity. Today: a free-write connected to the inquiry. \u201cWho are you in relation to this land? What do you notice about your place in the ecosystem?\u201d 10 minutes. No requirements for length or form.',
+        say:'\u201cWork on Writing is where you get to be a writer. The only rule: keep your pencil moving.\u201d',
+        lookFor:'Writing engagement and stamina. Who writes freely vs. who freezes. Genre preferences.',
+        materials:'Writing journals or notebooks'
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: research + field journal',
+        what:'Continue individual ecosystem investigations. Students begin drafting a \u201cspecies or system profile\u201d \u2014 a short informational text about their chosen ecosystem element.',
+        say:'',lookFor:'',materials:'Non-fiction sources, field journals, writing journals'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: multiplication + Math with Someone preview',
+        what:'Preview Math with Someone: a quick partner card game for multiplication facts (e.g. multiplication war). Then 10 minutes Math by Myself.',
+        say:'',lookFor:'Partner math dynamics \u2014 who leads, who follows, who disengages.',
+        materials:'Number cards or multiplication game materials, math journals'
+      }
+    ]
+    ,prep:['Visual timer ready — target 15 minutes','Writing journals or notebooks ready for Work on Writing introduction','Free-write prompt posted: “Who are you in relation to this land?”','Research sources accessible for species/system profiles','Multiplication partner game materials ready (cards or dice)']
+  },
+  {
+    day:'Day 14', title:'Read to Self at 18 minutes + Behaviour Conferences begin',
+    tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'},{text:'Conferring',bg:'var(--l6)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:45', block:'Read to Self \u2014 target 18 minutes',
+        what:'Standard routine. Target: 18\u201320 minutes. If the class reaches 18+ minutes with strong engagement, you are ready to begin Reading Strategies (CAFE) goal-setting next week.',
+        say:'',lookFor:'Overall class engagement level. Is the barometer student improving? Are multiple students breaking early?',
+        materials:'Timer, engagement log'
+      },
+      {
+        time:'9:45\u201310:00', block:'First Behaviour Conferences (2\u20133 students)',
+        what:`While students are in Read to Self, identify 2\u20133 students who have consistently broken engagement early or struggled with S.P.A.C.E. choices. Sit beside each one briefly (not during the round \u2014 after, or during the second round while others are reading).<br><br>
+Conference structure: observe 20 sec \u2192 connect (\u201cI\u2019ve noticed you\u2026\u201d) \u2192 one goal (one I-chart item) \u2192 record \u2192 set touchpoint.`,
+        say:'\u201cI noticed you moved three times today. Tell me about your S.P.A.C.E. spot. What would help you stay in one spot for the whole round?\u201d',
+        lookFor:'Student self-awareness about their engagement challenges. Who can identify the cause vs. who is confused.',
+        materials:'Conferring notebook, pen'
+      },
+      {
+        time:'10:00\u201310:15', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:15\u201211:00', block:'Quick Checks \u2014 first round',
+        what:`During the second Read to Self round today, conduct your first round of Quick Checks. Move through the room, sit beside 8\u201310 students (30\u201360 sec each). Note: book title, engagement level on the continuum, one brief observation.<br><br>
+Do not teach. Do not linger. This is data-gathering only.`,
+        say:'For each student: \u201cTell me about your book in one sentence.\u201d Listen. Note. Move on.',
+        lookFor:'Patterns across the class: who is reading below level, who always seems to be on the first few pages, who is reading with strong engagement.',
+        materials:'Conferring notebook \u2014 Quick Checks page'
+      },
+      {
+        time:'11:00\u201211:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry + Reading Strategies (CAFE) connections',
+        what:'Read-aloud connected to the inquiry. After: introduce Reading Strategies (CAFE) Comprehension informally: \u201cGood readers ask questions before, during, and after reading. Let\u2019s try that.\u201d Students practise with sticky notes \u2014 pre-reading questions, during-reading questions, post-reading questions.',
+        say:'',lookFor:'',materials:'Ecosystems text, sticky notes'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math by Myself + Math with Someone',
+        what:'10 minutes Math by Myself (goal-directed). Then 15 minutes Math with Someone (partner game or collaborative problem). Brief group check-in: what strategies did you use?',
+        say:'',lookFor:'',materials:'Math journals, partner game materials'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: Week 2 reflection',
+        what:'Students write a 3-sentence end-of-week reflection: \u201cWhat I can do independently now that I couldn\u2019t do two weeks ago. What I am working on. What I am proud of.\u201d Share 3\u20134.',
+        say:'',lookFor:'Growth mindset language. Who is proud of specific achievements vs. global statements.',
+        materials:'Journals'
+      }
+    ]
+    ,prep:['Visual timer ready — target 18–20 minutes','Conferring notebook open — identify 2–3 students for Behaviour Conferences today','Quick Checks page ready in conferring notebook','Ecosystems read-aloud text selected','Sticky notes for 3-column question tracking (before/during/after)','Math partner game materials ready','End-of-week reflection prompt prepared: 3-sentence journal prompt']
+  },
+  {
+    day:'Day 15', title:'Math by Myself \u2014 10 Steps launch',
+    tags:[{text:'10 Steps',bg:'var(--charcoal)',c:'#fff'},{text:'Math',bg:'var(--math)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:30', block:'Read to Self \u2014 target 20 minutes',
+        what:'By Day 15, Read to Self should be reaching 20 minutes. Run the standard routine. If engagement breaks before 20 minutes, note the time and identify the pattern before the Math by Myself launch.',
+        say:'',lookFor:'Sustainability of engagement at 20 minutes. Who is there and who is not.',
+        materials:'Timer, engagement log'
+      },
+      {
+        time:'9:30\u201310:30', block:'Math by Myself \u2014 full 10 Steps launch',
+        what:`Full 10-step session for Math by Myself. The I-chart is adapted from Read to Self \u2014 the behaviours are the same, the context is math:<br><br>
+<strong>Students:</strong> Get started right away, Stay in one spot, Work the whole time, Work quietly, Ignore distractions, Persevere, Use math tools appropriately.<br>
+<strong>Teacher:</strong> Work with students.<br><br>
+All other steps (modeling, practice, quiet signal, check-in) follow the same structure as the Read to Self launch. Start the engagement interval at 8\u201310 minutes.`,
+        say:'\u201cYou already know how to do this. The routine is the same as Read to Self. The only thing that\u2019s different is the work.\u201d',
+        lookFor:'Transfer of independence skills. Are students applying what they know, or do they treat this as a new experience?',
+        materials:'Blank I-chart paper for Math by Myself, math journals, manipulatives, visual timer'
+      },
+      {
+        time:'10:30\u201211:30', block:'Lunch + recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:30\u201212:20', block:'Ecosystems inquiry: research + species profile draft',
+        what:'Continue ecosystem investigations. Students draft the opening paragraph of their species/system profile. Share drafts in small groups \u2014 listeners give one specific feedback: \u201cOne thing that made me want to read more.\u201d',
+        say:'',lookFor:'',materials:'Research sources, writing journals'
+      },
+      {
+        time:'12:20\u20131:10', block:'Word Work \u2014 10 Steps launch',
+        what:'Run a shortened 10-steps session for Word Work (Steps 1\u20133 and 6\u201310 \u2014 skip the full modelling given students now understand the framework). I-chart for Word Work: similar to Read to Self but adds \u201cuse materials correctly and put them away.\u201d Start at 8 minutes.',
+        say:'\u201cYou know this structure. We just need to apply it to a new kind of work.\u201d',
+        lookFor:'Who engages with word work vs. who avoids it. Note literacy-related engagement patterns.',
+        materials:'Word Work materials ready, brief I-chart'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: engagement log + preview Week 3\u20134',
+        what:'Update engagement log for both Read to Self and Math by Myself. Preview: \u201cNext week we are going to start working with partners and groups. We will also begin individual conversations about your reading goals.\u201d',
+        say:'',lookFor:'',materials:'Engagement log'
+      }
+    ]
+    ,prep:['Math by Myself I-chart: blank chart paper with “Students | Teacher” headings','Math manipulatives accessible and labelled','Math journals at student spots','Visual timer ready — Read to Self target 20 min, Math start at 8–10 min','Word Work I-chart framework ready (shortened 10 Steps)','Engagement log ready to add Math column']
+  },
+  {
+    day:'Day 16', title:'Foundation Lesson 6 \u2014 Respectful Communication',
+    tags:[{text:'Foundation',bg:'var(--l5)',c:'#fff'},{text:'Collaborative',bg:'var(--l5)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:30', block:'Read to Self \u2014 20 minutes',
+        what:'Standard routine. Target: 20 minutes. This should now be largely automatic. Teacher is beginning to make brief conferences during the round.',
+        say:'',lookFor:'',materials:'Timer'
+      },
+      {
+        time:'9:30\u201310:15', block:'Foundation Lesson 6 \u2014 Respectful Communication (full lesson)',
+        what:`<strong>See Foundation Lessons tab for full plan.</strong><br><br>
+<strong>Distinguish individual from collaborative engagement (5 min):</strong> \u201cWhen you work independently, your engagement responsibility is to yourself. When you work collaboratively, you are responsible for your partner\u2019s engagement too.\u201d<br><br>
+<strong>Introduce the two new I-chart items (5 min):</strong> Conversational tone + Respectful communication. Define each concretely.<br><br>
+<strong>Roleplay (15 min):</strong> Teacher + student volunteer demonstrate collaborative reading \u2014 desirable version, then undesirable, then desirable again. Class names what they observed. Record on a \u201cRespectful Communication\u201d anchor chart.`,
+        say:'\u201cTomorrow we are going to launch Read to Someone. It uses everything you have built individually \u2014 plus these two new skills.\u201d',
+        lookFor:'Who already practises respectful communication naturally vs. who will need more support in partner work.',
+        materials:'Anchor chart paper for Respectful Communication, markers'
+      },
+      {
+        time:'10:15\u201210:30', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:30\u201211:15', block:'Read to Someone preview + partner assignment',
+        what:'Assign first partners (teacher-chosen for stability). Practise the \u201ccheck your partner\u201d move: read a page to your partner, ask one question. Partner answers. Switch. 10 minutes. This is not the 10 Steps \u2014 this is a preview. Debrief: what worked? What will we need to be careful about?',
+        say:'',
+        lookFor:'Social dynamics in action. Who is a strong partner? Who dominates? Who withdraws? Note these for the 10 Steps session tomorrow.',
+        materials:'Short shared texts for partners, assigned partner list'
+      },
+      {
+        time:'11:15\u201211:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: peer feedback on species profiles',
+        what:'Students share species/system profile drafts with a partner. Partners use a sentence stem: \u201cOne thing that helped me understand was\u2026 One question I still have is\u2026\u201d This is the first formal peer feedback in the class.',
+        say:'',
+        lookFor:'How students receive feedback. Who is defensive vs. who listens. This predicts collaborative learning behaviour.',
+        materials:'Species profile drafts, feedback sentence stem posted'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: Math with Someone \u2014 10 Steps preview',
+        what:'Brief preview of Math with Someone using the same structure as the Read to Someone preview. Partner game (multiplication or place value). Debrief.',
+        say:'',lookFor:'',materials:'Partner math game materials'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: preview collaborative launch',
+        what:'\u201cTomorrow: the collaborative launch. Everything you have built individually \u2014 plus two new responsibilities.\u201d',
+        say:'',lookFor:'',materials:''
+      }
+    ]
+    ,prep:['Anchor chart paper for Respectful Communication lesson','Partner assignments finalised — first collaborative pairs ready to announce','Short shared texts ready for Read to Someone preview (1 per pair)','Species/system profile drafts accessible for peer feedback','Feedback sentence stem posted: “One thing that helped me understand… One question I still have…”','Math partner game materials ready']
+  },
+  {
+    day:'Day 17', title:'Collaborative Learning \u2014 10 Steps launch',
+    tags:[{text:'10 Steps',bg:'var(--charcoal)',c:'#fff'},{text:'Collaborative',bg:'var(--l5)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:30', block:'Read to Self \u2014 20 minutes (anchor)',
+        what:'Standard routine. Independent reading is now the anchor of the day \u2014 it runs first, every day. Students know what to do.',
+        say:'',lookFor:'',materials:''
+      },
+      {
+        time:'9:30\u201310:30', block:'Read to Someone \u2014 full 10 Steps launch',
+        what:`Full 10-step session for Read to Someone. The Collaborative I-chart (see I-Charts tab) is built with students \u2014 same process as the independent I-chart, but with the two added items.<br><br>
+<strong>Step 3 critical moment:</strong> When building the I-chart, guide students to generate: \u201cUse conversational tone\u201d and \u201cUse respectful communication.\u201d These should come from students (building on yesterday\u2019s lesson), not be filled in by the teacher.<br><br>
+<strong>Steps 4\u20135:</strong> Model with a student partner \u2014 desirable collaborative reading, then undesirable (one person dominating, off-task conversation), then desirable.<br><br>
+<strong>Steps 6\u20138:</strong> Assigned partners go to their spots. 8 minutes. Teacher observes from perimeter.<br><br>
+<strong>Steps 9\u201310:</strong> Signal, return, check-in.`,
+        say:'\u201cIndependent learning asks: am I in charge of my engagement? Collaborative learning asks: am I contributing to my partner\u2019s engagement too?\u201d',
+        lookFor:'How partners interact in the first session. Note who struggles with conversational tone, who dominates, who withdraws. These are your first collaborative Behaviour Conference candidates.',
+        materials:'Collaborative I-chart (blank chart paper + markers), assigned partner pairs, short shared texts'
+      },
+      {
+        time:'10:30\u201210:45', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:45\u201211:30', block:'Second Read to Someone round + behaviour conferences',
+        what:'Second round: 10 minutes. Teacher uses this round to conduct 2\u20133 brief Behaviour Conferences with partnerships that struggled in Round 1. The conference is about the collaborative I-chart, not the reading.',
+        say:'',
+        lookFor:'Does the second round improve from the first? This is the key question for the Phase of Sticky Routines tracker.',
+        materials:'Conferring notebook, collaborative I-chart visible'
+      },
+      {
+        time:'11:30\u201211:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: partner research',
+        what:'First formal collaborative inquiry work: partners who share an ecosystem topic work together to find one piece of information neither of them had before. Share findings with the class.',
+        say:'',lookFor:'',materials:'Research materials, field journals'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: Math with Someone \u2014 10 Steps launch',
+        what:`Repeat the 10 Steps for Math with Someone (shortened \u2014 Steps 1\u20133 and 6\u201310). The I-chart adds: talk about math thinking, explain your strategy to your partner.<br><br>
+First session: 10 minutes partner game or collaborative problem.`,
+        say:'',lookFor:'',materials:'Math partner game materials'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: individual + collaborative engagement comparison',
+        what:'Students reflect: \u201cHow is your engagement different when you work alone vs. with a partner? Which is harder? Why?\u201d Pair-share, then 3\u20134 whole-group responses.',
+        say:'',lookFor:'',materials:''
+      }
+    ]
+    ,prep:['Collaborative Learning I-chart: blank chart paper with “Students | Teacher” headings','Two marker colours ready','Assigned partner pairs list visible to you','Short shared texts for Read to Someone (1 per pair)','Visual timer ready — first collaborative session 8 minutes','Conferring notebook open — identify 2–3 partnerships to conference with today','Math with Someone game materials ready']
+  },
+  {
+    day:'Day 18', title:'First Reading Strategies (CAFE) goal-setting conferences',
+    tags:[{text:'Conferring',bg:'var(--l6)',c:'#fff'},{text:'Reading Strategies (CAFE)',bg:'var(--lit-mid)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u20139:30', block:'Read to Self \u2014 20 minutes (independent)',
+        what:'Standard routine. This round is now reliable enough that you can begin 1:1 conferring during it. Students know what to do without your guidance.',
+        say:'',lookFor:'Overall engagement quality. Is the class sustaining 20 minutes independently?',materials:''
+      },
+      {
+        time:'9:30\u201310:30', block:'Reading Strategies (CAFE) goal-setting conferences \u2014 first 4\u20135 students',
+        what:`During Read to Someone and Read to Self rounds today, begin goal-setting conferences. 4\u20135 students per day. Use the 7 Steps from Assessment to Instruction (see Conferring tab).<br><br>
+<strong>Before the conference:</strong> Have the student\u2019s Quick Check notes from last week. Know their book.<br>
+<strong>Step 1\u20132:</strong> Observe them reading. Ask them to read a short passage to you.<br>
+<strong>Step 3\u20134:</strong> \u201cWhat are you working on as a reader? What feels easy? What feels hard?\u201d<br>
+<strong>Step 5\u20136:</strong> Use the Reading Strategies (CAFE) menu. Name one strength. Suggest one goal area \u2014 offer 2 options. Student chooses.<br>
+<strong>Step 7:</strong> Student declares their goal: \u201cMy goal is ___.\u201d They point to it on the Reading Strategies (CAFE) menu. You record it in your notebook. Set next meeting date.`,
+        say:'\u201cThis is the most important conversation I will have with you all year. We are going to talk about you as a reader.\u201d',
+        lookFor:'Quality of student self-assessment. Who has insight into their reading. Who cannot yet name what is hard. Both are useful data.',
+        materials:'Conferring notebook (individual pages set up), Reading Strategies (CAFE) menu (classroom display), Reading Strategies (CAFE) goal cards for each student, running record forms if using'
+      },
+      {
+        time:'10:30\u201210:45', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:45\u201211:30', block:'Literacy: ELA rotations (Read to Self, Read to Someone, Word Work)',
+        what:'First three-rotation ELA block. Students cycle through all three activities in 10\u201312 minute intervals. Teacher continues Reading Strategies (CAFE) conferences during this block.',
+        say:'\u201cYou now have three choices during the literacy block. All three are important. All three require independence.\u201d',
+        lookFor:'Independence across all three activities. Which activity has the weakest engagement \u2014 that\u2019s your next 10 Steps reteach target.',
+        materials:'All three stations ready'
+      },
+      {
+        time:'11:30\u201211:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: species profile revision + peer feedback round 2',
+        what:'Students revise their species/system profiles using yesterday\u2019s peer feedback. Second peer feedback round with a different partner. Focus on one revision only: adding a specific detail.',
+        say:'',lookFor:'Response to revision. Is the writing improving? Are students internalising the feedback?',
+        materials:'Writing journals, revised drafts'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: full Daily 3 rotation',
+        what:'First Math rotation block: Math by Myself (10 min), Math with Someone (10 min), Math Writing (8 min). Brief group check-in after.',
+        say:'',lookFor:'Which Math activity shows the weakest independence \u2014 reteach target.',
+        materials:'Math journals, partner game, Math Writing prompt'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: end of launch reflection',
+        what:'Whole group: \u201cTwo weeks ago, this class had never done any of this. Today you ran ELA rotations independently and some of you set your first reading goal. What are you most proud of?\u201d Record responses on a class anchor chart: \u201cLook what we built.\u201d',
+        say:'',
+        lookFor:'Ownership and pride. The emotional close of the September launch.',
+        materials:'Large anchor chart paper, markers'
+      }
+    ]
+    ,prep:['Conferring notebook: individual pages set up for first 4–5 conference students','Reading Strategies (CAFE) menu displayed prominently in the room','Reading Strategies (CAFE) goal cards ready (1 per student)','Running record forms if using them','All four ELA stations ready (Read to Self, Read to Someone, Work on Writing, Word Work)','Math rotation materials all ready','“Look what we built” anchor chart paper and markers ready for closing']
+  },
+  {
+    day:'Day 19', title:'ELA and Math in full rotation',
+    tags:[{text:'ELA',bg:'var(--lit-mid)',c:'#fff'},{text:'Math',bg:'var(--math)',c:'#fff'},{text:'Conferring',bg:'var(--l6)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u201310:30', block:'Full ELA block \u2014 4 activities rotating',
+        what:'Read to Self, Read to Someone, Work on Writing, Word Work all running. Students manage their own rotation choices. Teacher is conferring \u2014 goal-setting conferences for next 4\u20135 students.',
+        say:'',
+        lookFor:'Rotation independence. Can students transition between activities without teacher direction? Any activity consistently avoided \u2014 that is your reteach target.',
+        materials:'All four stations, conferring notebook, Reading Strategies (CAFE) goal cards'
+      },
+      {
+        time:'10:30\u201210:45', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:45\u201211:30', block:'Ecosystems inquiry: driving question deepening',
+        what:'Return to the September driving question: \u201cWho are we and where do we belong?\u201d Students review their field journal observations, inquiry research, and species profile work. Write a personal response (half page): \u201cWhat does this inquiry mean to me so far?\u201d',
+        say:'',lookFor:'',materials:'All inquiry materials, journals'
+      },
+      {
+        time:'11:30\u201211:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Math full block',
+        what:'All three Math activities rotating. Teacher continues conferring or pulls a small strategy group based on Quick Check data from last week.',
+        say:'',lookFor:'',materials:'Math materials'
+      },
+      {
+        time:'12:30\u20131:10', block:'Arts: nature-inspired process art',
+        what:'First formal Arts Education session of the year. Connect to inquiry: students create a process art piece inspired by their ecosystem observation (field journal sketch as the starting point). Medium: watercolour wash + ink, or pencil + colour. Focus is process, not product.',
+        say:'\u201cArt is another way of seeing. You are going to use your field journal observations as the seed.\u201d',
+        lookFor:'Creative risk-taking. Who is process-oriented vs. product-oriented.',
+        materials:'Watercolour paints or pencils/coloured pencils, field journal sketches for reference'
+      },
+      {
+        time:'1:10\u20131:30', block:'Closing: Reading Strategies (CAFE) goal sharing',
+        what:'Students who have set Reading Strategies (CAFE) goals this week share their goal with a partner: \u201cMy goal is ___ because ___.\u201d Partners ask one question. Brief whole-group share.',
+        say:'',lookFor:'',materials:'Reading Strategies (CAFE) goal cards'
+      }
+    ]
+    ,prep:['Conferring notebook: next 4–5 student pages ready','All ELA stations stocked','Driving question posted visibly for inquiry reflection','Art materials ready: watercolour + ink or pencil/coloured pencil','Field journal sketches accessible as reference for art','Math materials for full rotation','Reading Strategies (CAFE) goal cards accessible for closing share']
+  },
+  {
+    day:'Day 20', title:'September close \u2014 reflect, celebrate, look ahead',
+    tags:[{text:'Relationships',bg:'var(--l1)',c:'#fff'},{text:'Conferring',bg:'var(--l6)',c:'#fff'}],
+    schedule:[
+      {
+        time:'9:00\u201310:30', block:'ELA block \u2014 full rotation + final September conferences',
+        what:'Standard ELA block. Complete any remaining first-round Reading Strategies (CAFE) goal-setting conferences. Every student should have their first Reading Strategies (CAFE) goal by end of today.',
+        say:'',lookFor:'',materials:'Conferring notebook, Reading Strategies (CAFE) goal cards'
+      },
+      {
+        time:'10:30\u201210:45', block:'Recess',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'10:45\u201211:30', block:'September reflection \u2014 individual + class',
+        what:`<strong>Individual (10 min):</strong> Students write a 3-part journal reflection:<br>
+1. \u201cAt the start of September, I could\u2026\u201d<br>
+2. \u201cNow I can\u2026\u201d<br>
+3. \u201cIn October, I want to work on\u2026\u201d<br><br>
+<strong>Class anchor chart (10 min):</strong> Share responses. Record on \u201cLook what we built\u201d chart from Day 18. This is a visible record of the class\u2019s growth.`,
+        say:'\u201cEverything we built in September \u2014 the routines, the independence, the engagement skills, the reading goals \u2014 is the foundation for everything we do for the rest of the year. This month mattered.\u201d',
+        lookFor:'Growth mindset language. Who can name specific growth vs. who gives global statements. Who is ready for October vs. who needs more support.',
+        materials:'Student journals, class anchor chart from Day 18'
+      },
+      {
+        time:'11:30\u201211:45', block:'Lunch',
+        what:'',say:'',lookFor:'',materials:''
+      },
+      {
+        time:'11:45\u201212:30', block:'Ecosystems inquiry: unit 1 share',
+        what:'Students share their species/system profile drafts in small groups. Each person has 2 minutes to share. Group asks one question. This is a preview of the Exhibition format that will close the year.',
+        say:'\u201cIn June, you will do this for the whole school community. Today is the first practice.\u201d',
+        lookFor:'Presentation confidence. Speaking and listening engagement.',
+        materials:'Species profile drafts'
+      },
+      {
+        time:'12:30\u20131:10', block:'Math: Math + preview October number work',
+        what:'Full Math rotation. Brief preview of October\u2019s math focus: Gr 4 \u2014 multiplication and division; Gr 5 \u2014 decimal place value. Students note their current readiness level.',
+        say:'',lookFor:'',materials:'Math journals, October preview problems (1\u20132 sample questions)'
+      },
+      {
+        time:'1:10\u20141:30', block:'Closing celebration',
+        what:'Community circle. Each student completes: \u201cSomething I contributed to this class in September was\u2026\u201d Teacher shares genuine, specific observations about each student\u2019s growth (prepare 1 sentence per student in advance). Close with the class norms: \u201cDid we live these this month?\u201d',
+        say:'\u201cOctober starts Monday. You are ready.\u201d',
+        lookFor:'',
+        materials:'Class norms chart, \u201cLook what we built\u201d anchor chart'
+      }
+    ]
+    ,prep:['Conferring notebook: any remaining student pages ready for final September conferences','All ELA and Math stations ready','“Look what we built” anchor chart from Day 18 visible','Class norms chart visible','Species/system profile drafts ready for small-group share','October preview problems prepared (1–2 sample questions per grade)','Closing celebration: prepare one specific growth observation per student (written in advance)']
+  }
+];;
+
+const FOUNDATION_LESSONS = [
+  {
+    n:1, color:'var(--l4)', title:'What is Independent?',
+    subtitle:'Establishing the foundation concept before any structure is launched',
+    understand:'Independence is not working alone in silence. It is being in charge of your own learning — making decisions, sustaining focus, and not waiting for the teacher to tell you what to do next. This lesson establishes that definition so students have shared language when the I-chart is built.',
+    prepare:'Post the word INDEPENDENT on the board before the lesson. Have chart paper ready. Think of two examples: one of a student working independently (engaged, self-directing) and one who looks independent but is waiting or avoiding.',
+    teach:`<strong>Open with a question:</strong> “What does it mean to be independent?” Take 3–4 responses. Record key words.<br><br>
+<strong>Add nuance:</strong> “Independent does not mean alone. You can work with a partner and still be independent in your thinking.” Give an example.<br><br>
+<strong>Connect to learning:</strong> “In this classroom, we will have work periods where you are in charge of your own learning. Not because I am not here — because you are ready to be.”<br><br>
+<strong>Co-create a definition:</strong> Together with students, write a class definition of independence (2–3 sentences). Post it near the I-chart area.`,
+    support:`<strong>If students conflate independent with isolated:</strong> Revisit with examples from the natural world — an organism can be independent and still part of an ecosystem. This is an opportunity to deepen the September inquiry connection.<br><br>
+<strong>If students say “independent means no talking”:</strong> Clarify: independent means you are managing your own focus. Sometimes that includes talking — if the talk is purposeful. We will build an I-chart together that captures this precisely.`,
+    pivot:'Did students arrive at a definition that distinguishes independent from silent and alone? If not, plan a revisit in the next morning meeting before Foundation Lesson 2.',
+  },
+  {
+    n:2, color:'var(--l4)', title:'What is Engagement?',
+    subtitle:'Introducing the Continuum of Engagement and the five self-check questions',
+    understand:'Engagement is the goal of every work period — not compliance, not silence. This lesson gives students the language to name their own engagement honestly and take responsibility for moving themselves along the continuum. See the Engagement tab for the full Continuum reference.',
+    prepare:'Prepare a visual of the Continuum: Disengaged → Passive → Engaged. Have chart paper for the five self-check questions. Choose a short read-aloud connected to BC ecosystems.',
+    teach:`<strong>Introduce the Continuum:</strong> Show and explain all three levels. Give honest examples of each: “Disengaged might look like reading the same line five times. Passive might look like reading but not thinking about what you are reading. Engaged means your thinking is active.”<br><br>
+<strong>Teach the five questions:</strong> Post them one at a time:<br>
+<ul><li>What are my hands doing?</li><li>Where are my eyes?</li><li>What am I listening to?</li><li>What am I contributing?</li><li>Where is my mind right now?</li></ul><br>
+<strong>Practise:</strong> Read aloud for 5 minutes. Pause. Students answer the five questions silently, then place themselves on the continuum. Pair-share: “Where were you? What moved you there?” Share 3–4 responses. No judgment.`,
+    support:`<strong>If students all claim “Engaged”:</strong> Normalize honesty. Say: “Passive is not bad. It is information. The continuum is not a grade — it is a compass.” Model your own self-assessment.<br><br>
+<strong>If students are confused by the questions:</strong> For younger or emerging readers, simplify to sensory language: “What are your hands doing? What are your eyes looking at? Where is your brain right now?”`,
+    pivot:'Can students place themselves honestly on the continuum? Can they name what moved them from one level to another? If not, revisit in a morning meeting before moving to Foundation Lesson 3.',
+  },
+  {
+    n:3, color:'var(--l4)', title:'Material Management',
+    subtitle:'Book shopping with IPICK and independent material access',
+    understand:'Students who cannot access their own materials are dependent before the work period begins. This lesson makes material management a learning skill — not a logistical afterthought. It also formally introduces IPICK as the book-selection framework.',
+    prepare:'Book baskets ready and accessible. Have a selection of BC ecosystems non-fiction and connected fiction titles. Prepare the IPICK anchor chart. Plan a short demonstration of both good-fit and not-good-fit book selection.',
+    teach:`<strong>Introduce IPICK:</strong><br>
+<ul><li><strong>I</strong> choose</li><li><strong>P</strong>urpose — why am I reading this?</li><li><strong>I</strong>nterest — does this interest me?</li><li><strong>C</strong>omprehend — do I understand what I am reading?</li><li><strong>K</strong>now most words — can I read most of the words?</li></ul><br>
+<strong>Model selection:</strong> Pick up a book and think aloud through IPICK. Then pick up one that does not fit and think aloud through IPICK again. Name the mismatch.<br><br>
+<strong>Book shop:</strong> Students visit baskets and select 3–5 books for their reading container. Teacher circulates and asks: “Tell me about this one — how did IPICK guide your choice?”`,
+    support:`<strong>If students choose only pictures or very easy books:</strong> Honour the choice and ask about purpose. Easy books can serve engagement even for strong readers.<br><br>
+<strong>If students are overwhelmed by selection:</strong> Limit to 2 baskets initially. Expand access as independence grows.`,
+    pivot:'Can every student arrive at their reading spot with 3–5 good-fit books without asking the teacher? If not, plan individual or small-group book shopping sessions before the ELA launch.',
+  },
+  {
+    n:4, color:'var(--l4)', title:'Choose a Good-Fit S.P.A.C.E.',
+    subtitle:'Sound · People · Area · Comfort · Eyes',
+    understand:'Where students work shapes whether they can work. This lesson teaches students to make intentional choices about their physical environment — not just to find a seat, but to set up conditions that support their own engagement.',
+    prepare:'Post the S.P.A.C.E. acronym on chart paper. Identify 6–8 designated work areas in the room. Note which spots have different sound levels, proximity to others, and types of seating.',
+    teach:`<strong>Introduce S.P.A.C.E.:</strong><br>
+<ul><li><strong>S</strong>ound — how much sound helps me focus?</li><li><strong>P</strong>eople — do I work better near others or apart?</li><li><strong>A</strong>rea — where in the room works best for me?</li><li><strong>C</strong>omfort — what body position helps me concentrate?</li><li><strong>E</strong>yes — where do my eyes wander, and does that help or distract?</li></ul><br>
+<strong>Classroom walk:</strong> Students move through the room and try 2–3 spots. At each one they answer: “How does this feel for my engagement?”<br><br>
+<strong>Spot mapping:</strong> Students record their top 2 S.P.A.C.E. choices in their journal with a reason for each.`,
+    support:`<strong>If students choose spots to be near friends:</strong> Ask: “Is that a People choice that will help your engagement, or one that might move you toward Passive?”<br><br>
+<strong>If popular spots cause conflict:</strong> Introduce a spot rotation system for the first two weeks.`,
+    pivot:'Do students understand that their S.P.A.C.E. choice is a learning decision? Can they articulate why their chosen spot supports their engagement?',
+  },
+  {
+    n:5, color:'var(--l4)', title:'Think: What is My Purpose?',
+    subtitle:'The bridge from Foundation Lessons to the Teaching Structure',
+    understand:'Every work period has a purpose — and students who cannot name their purpose before they begin are more likely to drift toward Passive. This lesson prepares students for the “Set a Purpose” step in the Teaching Structure.',
+    prepare:'Prepare 3 example purposes for different tasks: an ELA purpose, a Math purpose, and a writing purpose. These should be student-voice examples, not teacher-speak.',
+    teach:`<strong>Open with a question:</strong> “Before you do any work today, what are you working on? What is your purpose?”<br><br>
+<strong>Show three examples:</strong> “I am reading to find out how salmon navigate to find their home river.” “I am working on my Reading Strategies (CAFE) goal: making connections while I read.” “I am practising my multiplication facts for 7s because I always slow down there.”<br><br>
+<strong>Notice:</strong> “A purpose is specific. It is not ‘I am reading.’ It is I am reading <em>for</em> something.”<br><br>
+<strong>Practise:</strong> Students write or say their purpose for the next work period before they move to their S.P.A.C.E. 60 seconds. Share 3–4 examples as a class.`,
+    support:`<strong>If students give vague purposes (“to finish my book”):</strong> Ask: “What will you be thinking about while you read?” Guide toward: “I am reading to find out what happens to ___” or “I am reading to practise noticing new vocabulary.”<br><br>
+<strong>If students struggle to generate a purpose:</strong> Offer the sentence stem: “I am [task] to/because [reason].” Post this near the I-chart for the first two weeks.`,
+    pivot:'Can students state a specific, learning-focused purpose before beginning a work period? If not, use purpose-setting as a daily morning ritual until it is automatic before launching the 10 Steps.',
+  },
+];
+
+const COLLAB_FOUNDATION = [
+  {
+    n:6, color:'var(--l5)', title:'Respectful Communication',
+    subtitle:'The additional foundation lesson before Collaborative Learning is launched',
+    understand:'Collaborative learning adds a new dimension of engagement responsibility — not just to yourself, but to your partner or group. This lesson establishes the specific communication behaviours that make collaboration productive.',
+    prepare:'Prepare two short roleplay demonstrations: one of collaborative work with respectful communication, and one with interrupting, dismissing, or off-task conversation. Prepare the Collaborative I-chart frame.',
+    teach:`<strong>Distinguish independent from collaborative engagement:</strong> “When you work independently, your engagement responsibility is to yourself. When you work collaboratively, your engagement responsibility includes others.”<br><br>
+<strong>Introduce the two additional I-chart items:</strong><br>
+<ul><li>Use a <strong>conversational tone</strong> — not a whisper, not a shout. A tone you would use with a trusted friend in a library.</li><li>Use <strong>respectful communication</strong> — listen when others speak, disagree with ideas not people, wait for your turn.</li></ul><br>
+<strong>Roleplay:</strong> Demonstrate both desirable and undesirable collaborative behaviour with a student volunteer. Students identify which behaviours moved the pair toward Engaged and which toward Passive or Disengaged.`,
+    support:`<strong>If students have strong social dynamics:</strong> Assign partners for the first two weeks of collaborative work. Allow choice after routines are established.<br><br>
+<strong>If students struggle with conversational volume:</strong> Post a visual volume scale. Practise “library voice” as a warm-up before every collaborative session for the first week.`,
+    pivot:'Do students understand that collaborative engagement is a shared responsibility? Can they articulate the difference between independent and collaborative engagement expectations?',
+  },
+];
+
+const STEPS_DATA = [
+  {n:1, action:'Identify what is to be taught', why:'Clarity before teaching. Name the routine explicitly — not just “reading time” but “Read to Self: independent reading at your chosen spot.”', note:'For transitions: “moving from whole group to work spots.” For Read to Self: “reading independently at your S.P.A.C.E. spot.”'},
+  {n:2, action:'Set a purpose — create a sense of urgency', why:'Students need to understand why this routine matters. Connect to their learning and their goals. “When you can read independently for 20 minutes, you can travel anywhere in your mind.”', note:'This is the teacher’s job, not the students’. Your urgency is not manufactured — it is real. Share why this matters to you.'},
+  {n:3, action:'Record desired behaviors on the I-chart', why:'Co-creation builds ownership. Students will follow norms they helped name. Guide them to generate the behaviours through questions, not by filling in blanks.', note:'Questions to prompt: “What would an engaged reader look like right now? What would you hear? What would help everyone focus?” Record in student language.'},
+  {n:4, action:'Model most-desirable behaviors', why:'Show, don’t tell. Use a student volunteer to model what the I-chart looks like in action. The class observes and names what they see.', note:'Debrief: “What did you notice? What did they do that matched our I-chart?” Connect observations to specific I-chart items.'},
+  {n:5, action:'Model least-desirable behaviors, then most-desirable (same student)', why:'Seeing the contrast makes the expectation concrete. The same student models both — this is not shaming, it is illustration. Always end on the desirable behaviour.', note:'Students often find this funny — that is fine. Use it. The shift from undesirable to desirable is the lesson.'},
+  {n:6, action:'Place students around the room', why:'Students choose their S.P.A.C.E. spot — not a random seat. This is their first application of Foundation Lesson 4. They are making an intentional engagement decision.', note:'Give 60 seconds. Circulate and observe. Note who struggles to choose — this is data. Do not intervene unless truly necessary.'},
+  {n:7, action:'Practice and build engagement', why:'First session: set the visual timer for 5 minutes. Do not adjust on the fly. The goal is not to read for as long as possible — it is to practise the routine until the signal.', note:'Do not circulate to check on students during the first session. Your presence near a student signals that you expect them to fail. Stay at the edge of the room.'},
+  {n:8, action:'Stay out of the way; when necessary, confer about engagement', why:'Your job during the work period is not to be seen. The moment you move to help a student, every other student watches to see if they can also get your attention.', note:'Confer about engagement, not content. “I noticed you moved three times. Tell me about your S.P.A.C.E. choice. What would help you stay in one spot?” Keep it brief.'},
+  {n:9, action:'Use a quiet signal, come back to the group', why:'The signal ends the session on your terms, not the class’s. Use it before engagement breaks if possible — end on success. It is better to stop at 4 minutes with everyone engaged than at 6 minutes when three students have already broken focus.', note:'After the signal: wait 10 seconds before speaking. Let the return to the group be calm, not urgent.'},
+  {n:10, action:'Group check-in: “How did it go?”', why:'Reflection consolidates the routine. Students name what worked, what was hard, and what they will try differently next time. This is formative data — listen for who understands the purpose and who is still confused.', note:'Ask: “Did anyone move on the Continuum today? Tell us about it.” Record the time. Celebrate the number. “Today we made it to 5 minutes. Tomorrow we are going for 7.”'},
+];
+
+const PHASES = [
+  {n:1, label:'Introduction', desc:'First teaching. The 10 Steps are used. Students are learning the routine for the first time.'},
+  {n:2, label:'Guided Practice', desc:'Reteach the routine 1–2 more times. Students understand but still need reminders and support.'},
+  {n:3, label:'Emerging', desc:'Most students follow the routine. Some still need individual conferring at the moment of breakdown.'},
+  {n:4, label:'Developing', desc:'Routine is mostly automatic. Occasional reminders only. Begin extending engagement intervals.'},
+  {n:5, label:'Automatic', desc:'Routine is fully internalised. Students self-regulate without prompting. Teacher focus shifts entirely to content conferring.'},
+];
+
+const CONF_TYPES = [
+  {name:'Behavior Conference', when:'Weeks 2–3 — first conferring move', color:'var(--l4)', desc:'When engagement breaks, sit beside the student — calmly, not urgently. Ask about their engagement, not their reading. Use the Lesson Framework: observe first, engage and connect, teach one thing, practice and record. Set one clear, attainable goal. Schedule a follow-up touchpoint.', steps:['Sit beside the student without speaking for 20 seconds. Observe.','Connect: "I noticed you\'ve moved a few times. Tell me about your spot." Listen.','Identify one behaviour to work on: one I-chart item only.','Together, set one goal: "Tomorrow, try the corner spot for the whole 8 minutes."','Record: student name, date, what you noticed, the goal, and touchpoint date.','Follow up on the date you recorded. Name what you see: "I noticed you stayed in the corner the whole time today."']},
+  {name:'Informative Quick Check', when:'Week 3 — second conferring move', color:'var(--l6)', desc:'A brief sweep across the class during independent work. Not a deep conference — a pattern-spotter. 30–60 seconds per student. Record 1–2 pieces of information: what are they reading, how engaged do they appear, any quick questions about their reading. This data informs groupings and next whole-group lessons.', steps:['Move through the room during Read to Self. Sit beside 8–10 students in one session.','For each: note the book title, observe engagement level on the continuum.','Ask one question: "Tell me one thing about your book." Listen. Note what you hear.','Record: title, brief engagement note, one observation (e.g. "strong fluency," "skipping words").','Do not teach during a quick check. Teaching comes in conferences. This is data-gathering.','After: look for patterns. Who is reading below level? Who is always on the same page?']},
+  {name:'Goal-Setting Conference', when:'Week 4 — when independence is established', color:'var(--lit-mid)', desc:'The Reading Strategies (CAFE) goal-setting conference: the most important assessment data of the year. Use the 7 Steps from Assessment to Instruction. Listen to the student read. Use the Reading Strategies (CAFE) menu to identify one strength and one area of growth. The student declares their goal — not the teacher. Record it in the conferring notebook with the student watching.', steps:['Observe the student reading for 30 seconds before speaking.','Ask: "What are you working on as a reader? What feels easy? What feels hard?"','Listen to the student read a short passage. Note what you observe.','Use the Reading Strategies (CAFE) menu to identify one goal that will move this reader forward.','Discuss with the student: share what you noticed, ask what they notice.','Student declares their goal: "My goal is ___." They point to it on the Reading Strategies (CAFE) menu.','Record in your conferring notebook: strength, goal, strategy, next meeting date.']},
+];
+
+const SEVEN_STEPS = [
+  'Assess the individual student — running record, reading conversation, or observation during independent reading.',
+  'Review the assessment: identify strengths, potential goals, and strategies that match.',
+  'Discuss findings with the student. Use the language of the Reading Strategies (CAFE) menu. Share what you noticed.',
+  'Student declares their goal on the classroom Reading Strategies (CAFE) Menu — they choose it, they post it.',
+  'Teacher records goal and strategy in the conferring notebook on the child\'s individual page.',
+  'Teacher records on the strategy group page — who else shares this goal? A strategy group may form.',
+  'Ready for instruction: the next conference with this student begins with the goal they set.',
+];
+
+const SELF_CHECK = [
+  {q:'What are my hands doing?', why:'Hands are often the first indicator of engagement. Working hands (writing, pointing, turning pages) suggest active engagement. Still or fidgeting hands may signal Passive or Disengaged.'},
+  {q:'Where are my eyes?', why:'Eyes on text, eyes following a line, eyes scanning — engaged. Eyes wandering around the room or watching others — signal to self-redirect.'},
+  {q:'What am I listening to?', why:'During quiet work, listening to your own thinking. During collaborative work, listening to your partner. Noticing what you are listening to is noticing where your attention is.'},
+  {q:'What am I contributing?', why:'Most relevant during collaborative work, but applicable to writing and thinking too. What is my contribution to this right now? An empty page is data.'},
+  {q:'Where is my mind right now?', why:'The deepest question. Hands and eyes can look engaged while the mind is elsewhere. Students who can answer this honestly are developing genuine metacognition.'},
+];
+
+// ── RENDER FUNCTIONS ──
+
+const ICHART_TASKS = [
+  {
+    id:'rts', label:'Read to Self', icon:'📖', color:'var(--lit-mid)', bg:'var(--lit-bg)',
+    when:'Day 9 — the anchor launch',
+    note:'The first and most important I-chart. Everything else builds on what you establish here.',
+    students:['Get started right away','Choose a good-fit S.P.A.C.E. spot','Stay in one spot','Work the whole time','Read the whole time (not flip pages)','Work quietly','Ignore distractions','Persevere'],
+    teacher:['Work with students — confer and teach']
+  },
+  {
+    id:'r2s', label:'Read to Someone', icon:'🤝', color:'var(--lit-mid)', bg:'var(--lit-bg)',
+    when:'Day 11–17 — after Read to Self is stable',
+    note:'Adds two relational expectations to the student side. Everything else mirrors Read to Self.',
+    students:['Get started right away','Stay with your partner','Work the whole time','Use conversational tone','Use respectful communication — listen when your partner speaks','Check your partner (ask a question after each page or section)','Ignore distractions','Persevere'],
+    teacher:['Work with students — confer and teach']
+  },  
+  {
+    id:'wow', label:'Work on Writing', icon:'✏️', color:'var(--lit-mid)', bg:'var(--lit-bg)',
+    when:'Day 13 onward',
+    note:'Writing independence follows the same structure. Students stay in one spot and keep their pencil moving.',
+    students:['Get started right away — begin writing immediately','Choose a good-fit S.P.A.C.E. spot','Stay in one spot','Work the whole time — keep your pencil moving','Work quietly','Ignore distractions','Persevere through the hard parts'],
+    teacher:['Work with students — confer and teach']
+  },
+  {
+    id:'ww', label:'Word Work', icon:'🔤', color:'var(--lit-mid)', bg:'var(--lit-bg)',
+    when:'Day 12 onward',
+    note:'Add one material-management expectation: return all materials to their place.',
+    students:['Get started right away','Choose a good-fit S.P.A.C.E. spot','Stay in one spot','Use materials purposefully and carefully','Work the whole time','Work quietly','Return all materials to their place when finished'],
+    teacher:['Work with students — confer and teach']
+  },
+  {
+    id:'mbm', label:'Math by Myself', icon:'🧮', color:'var(--math-mid)', bg:'var(--math-bg)',
+    when:'Day 15 — parallel to Read to Self',
+    note:'Same structure as Read to Self. Add one math-specific expectation: use tools purposefully.',
+    students:['Get started right away','Choose a good-fit S.P.A.C.E. spot','Stay in one spot','Work the whole time — keep thinking even when it is hard','Work quietly','Use math tools purposefully and put them away','Ignore distractions','Persevere'],
+    teacher:['Work with students — confer and teach']
+  },
+  {
+    id:'mws', label:'Math with Someone', icon:'📊', color:'var(--math-mid)', bg:'var(--math-bg)',
+    when:'Day 16–17 onward',
+    note:'Mirrors Read to Someone. The two collaborative additions apply here too.',
+    students:['Get started right away','Stay with your partner','Work the whole time','Use conversational tone — talk about your math thinking','Use respectful communication — listen when your partner explains','Explain your strategy, not just your answer','Use math tools purposefully and put them away'],
+    teacher:['Work with students — confer and teach']
+  },
+  {
+    id:'mw', label:'Math Writing', icon:'📝', color:'var(--math-mid)', bg:'var(--math-bg)',
+    when:'Day 12 onward',
+    note:'Writing about math thinking. Same independence expectations as Work on Writing.',
+    students:['Get started right away','Choose a good-fit S.P.A.C.E. spot','Stay in one spot','Write the whole time — explain your thinking even when it is hard','Work quietly','Use precise math language','Ignore distractions'],
+    teacher:['Work with students — confer and teach']
+  },
+  {
+    id:'tr', label:'Transitions', icon:'🚶', color:'var(--l3)', bg:'var(--l3-bg)',
+    when:'Day 3 — the first 10 Steps practice run',
+    note:'The simplest routine to launch first. Low stakes, high frequency. Teaches the whole class how the 10 Steps framework works before it is used for ELA.',
+    students:['Walk calmly','Bring everything you need','Arrive at the destination ready','Get started right away'],
+    teacher:['Give clear directions before the transition begins','Wait for everyone to be ready']
+  },
+];;;
+
+function renderLayers(){
+  const el = document.getElementById('layers-list');
+  el.innerHTML = LAYERS.map((l,i)=>`
+    <div class="layer-row" data-idx="${i}" style="border-left:4px solid ${l.color}">
+      <div class="layer-num" style="background:${l.color};width:48px">${l.num}</div>
+      <div class="layer-body">
+        <div class="layer-when">${l.when}</div>
+        <div class="layer-name" style="color:${l.color}">${l.name}</div>
+        <div class="layer-desc">${l.desc}</div>
+      </div>
+    </div>`).join('');
+}
+
+function renderPreChecklist(){
+  const el = document.getElementById('pre-checklist');
+  if(!el) return;
+  el.innerHTML = PRE_CHECKLIST.map(d=>`
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num" style="background:var(--l2);font-size:10px;padding:.65rem .75rem">BEFORE<br>DAY 1</div>
+        <div class="day-title">${d.title}</div>
+        <div class="day-tags">${d.tags.map(t=>`<span class="day-tag" style="background:${t.bg};color:${t.c}">${t.text}</span>`).join('')}</div>
+        <div class="day-toggle">▼</div>
+      </div>
+      <div class="day-body">
+        <div class="day-block">
+          <div class="day-block-content"><ul>${d.items.map(i=>`<li>${i}</li>`).join('')}</ul></div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderWeekAccordion(){
+  const el = document.getElementById('week-accordion');
+  if(!el) return;
+
+  const WEEK_DAYS = [
+    ['Day 1','Day 2','Day 3','Day 4','Day 5'],
+    ['Day 6','Day 7','Day 8','Day 9','Day 10'],
+    ['Day 11','Day 12','Day 13','Day 14','Day 15'],
+    ['Day 16','Day 17','Day 18','Day 19','Day 20'],
+  ];
+
+  el.innerHTML = WEEK_OVERVIEW.map((w, wi) => {
+    const weekDays = DAYS.filter(d => WEEK_DAYS[wi].includes(d.day));
+
+    const daysHTML = weekDays.map((d, di) => {
+      const dayIdx = DAYS.indexOf(d);
+      const scheduleHTML = d.schedule.map((s, si) => {
+        if(!s.what && !s.say && !s.lookFor && !s.materials){
+          return `<div class="sched-break" data-di="${dayIdx}" data-si="${si}" data-base="${s.time}">${s.time} — ${s.block}</div>`;
+        }
+        let meta = '';
+        if(s.say) meta += `<div class="sched-say">${s.say}</div>`;
+        if(s.lookFor) meta += `<div class="sched-look">${s.lookFor}</div>`;
+        if(s.materials) meta += `<div class="sched-mats">${s.materials}</div>`;
+        return `<div class="sched-block">
+          <div class="sched-time" data-di="${dayIdx}" data-si="${si}" data-base="${s.time}" onclick="editTime(this)" title="Click to edit time">${s.time}</div>
+          <div class="sched-content">
+            <div class="sched-block-name">${s.block}</div>
+            ${s.what ? `<div class="sched-what">${s.what}</div>` : ''}
+            ${meta ? `<div class="sched-meta">${meta}</div>` : ''}
+          </div>
+        </div>`;
+      }).join('');
+
+      const prepHTML = d.prep ? `
+        <div class="prep-section">
+          <div class="prep-hdr" onclick="togglePrep(this)">
+            <span class="prep-hdr-icon">✅</span>
+            <span class="prep-hdr-label">Prepare for tomorrow</span>
+            <span class="prep-hdr-sub" id="prep-sub-${dayIdx}">0 of ${d.prep.length} ready</span>
+            <span class="prep-hdr-toggle">▼</span>
+          </div>
+          <div class="prep-body" id="prep-body-${dayIdx}">
+            <div class="prep-progress"><div class="prep-progress-bar" id="prep-bar-${dayIdx}" style="width:0%"></div></div>
+            ${d.prep.map((item,ii)=>`
+              <div class="prep-item" onclick="togglePrep_item(${dayIdx},${ii})">
+                <div class="prep-cb" id="cb-${dayIdx}-${ii}"></div>
+                <span class="prep-text" id="pt-${dayIdx}-${ii}">${item}</span>
+              </div>`).join('')}
+            <button class="prep-clear" onclick="clearPrep(event,${dayIdx})">Clear all</button>
+          </div>
+        </div>` : '';
+
+      return `<div class="day-card" style="border-radius:0;border-left:none;border-right:none;border-top:none">
+        <div class="day-hdr">
+          <div class="day-num" style="background:${w.color}">${d.day}</div>
+          <div class="day-title">${d.title}</div>
+          <div class="day-tags">${d.tags.map(t=>`<span class="day-tag" style="background:${t.bg};color:${t.c}">${t.text}</span>`).join('')}</div>
+          <div class="day-toggle">▼</div>
+        </div>
+        <div class="day-body">
+          ${scheduleHTML}
+          ${prepHTML}
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="week-block" id="week-block-${wi}">
+      <div class="week-hdr" onclick="toggleWeek(${wi})">
+        <div class="week-stripe" style="background:${w.color}"></div>
+        <div class="week-hdr-body">
+          <div class="week-hdr-top">
+            <span class="week-label" style="color:${w.color}">${w.wk}</span>
+            <span class="week-dates">${w.days}</span>
+          </div>
+          <div class="week-focus">${w.focus}</div>
+          <div class="week-items">${w.items.map(i=>`<span class="week-item-pill">${i}</span>`).join('')}</div>
+        </div>
+        <div class="week-toggle-col" id="week-tog-${wi}">▼</div>
+      </div>
+      <div class="week-days" id="week-days-${wi}">
+        ${daysHTML}
+      </div>
+    </div>`;
+  }).join('');
+
+  applyTimeOffsets();
+}
+
+function toggleWeek(wi){
+  const days = document.getElementById('week-days-'+wi);
+  const tog  = document.getElementById('week-tog-'+wi);
+  const isOpen = days.classList.contains('open');
+
+  // Accordion: close all others
+  document.querySelectorAll('.week-days').forEach((d,i) => {
+    d.classList.remove('open');
+    document.getElementById('week-tog-'+i).textContent = '▼';
+  });
+
+  // Open this one if it was closed
+  if(!isOpen){
+    days.classList.add('open');
+    tog.textContent = '▲';
+    // Scroll the week header into view smoothly
+    document.getElementById('week-block-'+wi).scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+}
+
+function renderFoundationLessons(lessons, targetId){
+  const el = document.getElementById(targetId);
+  el.innerHTML = lessons.map(l=>`
+    <div class="fl-card">
+      <div class="fl-hdr">
+        <div class="fl-num" style="background:${l.color}">${l.n}</div>
+        <div class="fl-hdr-body">
+          <div class="fl-title">${l.title}</div>
+          <div class="fl-subtitle">${l.subtitle}</div>
+        </div>
+        <div class="fl-toggle">▼</div>
+      </div>
+      <div class="fl-body">
+        <div class="stage-grid">
+          <div class="stage-box stage-U">
+            <div class="stage-label">Understand · Why?</div>
+            <div class="stage-content">${l.understand}</div>
+          </div>
+          <div class="stage-box stage-P">
+            <div class="stage-label">Prepare · Before you teach</div>
+            <div class="stage-content">${l.prepare}</div>
+          </div>
+        </div>
+        <div class="stage-box stage-T" style="margin-bottom:10px">
+          <div class="stage-label">Teach · Explicitly</div>
+          <div class="stage-content">${l.teach}</div>
+        </div>
+        <div class="stage-box stage-S" style="margin-bottom:10px">
+          <div class="stage-label">Support · Pivots</div>
+          <div class="stage-content">${l.support}</div>
+        </div>
+        <div class="pivot-box">
+          <div class="pivot-label">Instructional Pivot — Did it work?</div>
+          <div class="pivot-text">${l.pivot}</div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function renderSteps(targetId, isCollab){
+  const el = document.getElementById(targetId);
+  el.innerHTML = STEPS_DATA.map(s=>{
+    let action = s.action;
+    let why = s.why;
+    let note = s.note;
+    if(isCollab){
+      if(s.n===3) note = 'Add to student side: "Use conversational tone" and "Use respectful communication." These are not additions to the Independent I-chart — they replace the blank Collaborative I-chart.';
+      if(s.n===1) action = 'Identify what is to be taught — Collaborative Learning';
+    }
+    return `<div class="step-row">
+      <div class="step-n">${s.n}</div>
+      <div class="step-body">
+        <div class="step-action">${action}</div>
+        <div class="step-why">${why}</div>
+        ${note?`<div class="step-note">→ ${note}</div>`:''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderPhases(){
+  const el = document.getElementById('phases-track');
+  el.innerHTML = PHASES.map(p=>`
+    <div class="phase-step">
+      <div class="phase-step-n">${p.n}</div>
+      <div class="phase-step-label">${p.label}</div>
+      <div class="phase-step-desc">${p.desc}</div>
+    </div>`).join('');
+}
+
+function renderICharts(){
+  // Build task selector tabs
+  const tabs = document.getElementById('ichart-tabs');
+  if(!tabs) return;
+  tabs.innerHTML = ICHART_TASKS.map((t,i)=>`
+    <button class="phase-tab ${i===0?'on':''}"
+      style="${i===0?'background:'+t.color+';color:#fff;border-color:transparent':''}"
+      onclick="selectIChart(${i},this)"
+      data-color="${t.color}">
+      ${t.icon} ${t.label}
+    </button>`).join('');
+  showIChart(0);
+}
+
+function selectIChart(idx, btn){
+  document.querySelectorAll('#ichart-tabs .phase-tab').forEach(b=>{
+    b.classList.remove('on');
+    b.style.background=''; b.style.color=''; b.style.borderColor='';
+  });
+  btn.classList.add('on');
+  btn.style.background = ICHART_TASKS[idx].color;
+  btn.style.color = '#fff';
+  btn.style.borderColor = 'transparent';
+  showIChart(idx);
+}
+
+function showIChart(idx){
+  const t = ICHART_TASKS[idx];
+  const el = document.getElementById('ichart-display');
+  if(!el) return;
+  el.innerHTML = `
+    <div class="note-box" style="border-left-color:${t.color};margin-bottom:.75rem">
+      <strong>When to build this chart:</strong> ${t.when}<br>
+      ${t.note}
+    </div>
+    <div class="ichart">
+      <div class="ichart-title" style="background:${t.color}">${t.icon} I-Chart — ${t.label}</div>
+      <div class="ichart-cols">
+        <div>
+          <div class="ichart-col-hdr students">Students</div>
+          <div class="ichart-items students">
+            ${t.students.map(s=>`<div class="ichart-item">${s}</div>`).join('')}
+          </div>
+        </div>
+        <div>
+          <div class="ichart-col-hdr">Teacher</div>
+          <div class="ichart-items">
+            ${t.teacher.map(s=>`<div class="ichart-item">${s}</div>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderConfTypes(){
+  const el = document.getElementById('conf-types');
+  el.innerHTML = CONF_TYPES.map(c=>`
+    <div class="conf-type-card" style="border-top-color:${c.color}">
+      <div class="conf-type-name" style="color:${c.color}">${c.name}</div>
+      <div class="conf-type-when">${c.when}</div>
+      <div class="conf-type-desc">${c.desc}</div>
+      <ol class="conf-steps">${c.steps.map((s,i)=>`<li data-n="${i+1}">${s}</li>`).join('')}</ol>
+    </div>`).join('');
+}
+
+function renderSevenSteps(){
+  const el = document.getElementById('seven-steps');
+  el.innerHTML = SEVEN_STEPS.map((s,i)=>`
+    <div class="ss-row">
+      <div class="ss-n">${i+1}</div>
+      <div class="ss-text">${s}</div>
+    </div>`).join('');
+}
+
+function renderSelfCheck(){
+  const el = document.getElementById('self-check');
+  el.innerHTML = SELF_CHECK.map((s,i)=>`
+    <div class="step-row">
+      <div class="step-n" style="background:var(--teal)">${i+1}</div>
+      <div class="step-body">
+        <div class="step-action">${s.q}</div>
+        <div class="step-why">${s.why}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ── TIME MANAGEMENT ──
+// Base schedule offset from 08:30 (in minutes)
+
+const BASE_START_MINUTES = 8*60+30;
+const TIME_OVERRIDES = {}; // key: "di-si" -> custom time string
+
+function timeToMinutes(t){
+  // handles "8:30–10:00" or "8:30" formats - extract first time
+  const m = t.match(/(\d{1,2}):(\d{2})/);
+  if(!m) return null;
+  return parseInt(m[1])*60+parseInt(m[2]);
+}
+
+function minutesToTime(mins){
+  const h = Math.floor(((mins % (24*60)) + 24*60) % (24*60) / 60);
+  const m = mins % 60;
+  return `${h}:${String(m).padStart(2,'0')}`;
+}
+
+function shiftTimeString(original, offsetMins){
+  // Shift all times in a range string like "8:30–10:00"
+  return original.replace(/(\d{1,2}):(\d{2})/g, (_, h, m) => {
+    const orig = parseInt(h)*60+parseInt(m);
+    return minutesToTime(orig + offsetMins);
+  });
+}
+
+function applyTimeOffsets(){
+  const input = document.getElementById('start-time-input');
+  if(!input) return;
+  const val = input.value; // "HH:MM"
+  const [sh,sm] = val.split(':').map(Number);
+  const newStart = sh*60+sm;
+  const offset = newStart - BASE_START_MINUTES;
+
+  document.querySelectorAll('[data-base]').forEach(el => {
+    const key = el.dataset.di+'-'+el.dataset.si;
+    if(TIME_OVERRIDES[key]){
+      // Custom override — show as-is with custom styling
+      if(el.classList.contains('sched-time')){
+        el.textContent = TIME_OVERRIDES[key];
+        el.classList.add('custom');
+      } else {
+        // break row
+        const base = el.dataset.base;
+        el.textContent = TIME_OVERRIDES[key]+' — '+el.textContent.split('—').slice(1).join('—').trim();
+      }
+    } else {
+      const base = el.dataset.base;
+      const shifted = shiftTimeString(base, offset);
+      if(el.classList.contains('sched-time')){
+        el.textContent = shifted;
+        el.classList.remove('custom');
+      } else {
+        // break row — reconstruct
+        const blockName = el.textContent.includes('—') ? el.textContent.split('—').slice(1).join('—').trim() : '';
+        if(blockName) el.textContent = shifted+' — '+blockName;
+      }
+    }
+  });
+}
+
+function resetAllTimes(){
+  Object.keys(TIME_OVERRIDES).forEach(k => delete TIME_OVERRIDES[k]);
+  document.getElementById('start-time-input').value = '08:30';
+  applyTimeOffsets();
+  // Remove custom styling
+  document.querySelectorAll('.sched-time.custom').forEach(el => el.classList.remove('custom'));
+}
+
+function editTime(el){
+  if(el.classList.contains('editing')) return;
+  const current = el.textContent;
+  el.classList.add('editing');
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.className = 'time-edit-input';
+  input.value = current;
+  input.placeholder = '8:30–10:00';
+  el.textContent = '';
+  el.appendChild(input);
+  input.focus();
+  input.select();
+
+  const commit = () => {
+    const val = input.value.trim();
+    const key = el.dataset.di+'-'+el.dataset.si;
+    if(val && val !== el.dataset.base){
+      TIME_OVERRIDES[key] = val;
+      el.classList.add('custom');
+    } else {
+      delete TIME_OVERRIDES[key];
+      el.classList.remove('custom');
+    }
+    el.classList.remove('editing');
+    el.textContent = val || el.dataset.base;
+    if(TIME_OVERRIDES[key]) el.classList.add('custom');
+  };
+  input.addEventListener('blur', commit);
+  input.addEventListener('keydown', e => {
+    if(e.key==='Enter') { e.preventDefault(); input.blur(); }
+    if(e.key==='Escape') { input.value = el.dataset.base; input.blur(); }
+  });
+}
+
+document.getElementById('start-time-input')?.addEventListener('change', applyTimeOffsets);
+
+// ── PREP CHECKLIST LOGIC ──
+const PREP_STATE = {}; // key: "di-ii" -> boolean
+
+function togglePrep_item(di, ii){
+  const key = di+'-'+ii;
+  PREP_STATE[key] = !PREP_STATE[key];
+  const cb = document.getElementById('cb-'+key);
+  const pt = document.getElementById('pt-'+key);
+  if(cb) cb.classList.toggle('checked', PREP_STATE[key]);
+  if(pt) pt.classList.toggle('checked', PREP_STATE[key]);
+  updatePrepProgress(di);
+}
+
+function updatePrepProgress(di){
+  const day = DAYS[di];
+  if(!day.prep) return;
+  const total = day.prep.length;
+  const done = day.prep.filter((_,ii) => PREP_STATE[di+'-'+ii]).length;
+  const pct = total ? Math.round(done/total*100) : 0;
+  const bar = document.getElementById('prep-bar-'+di);
+  const sub = document.getElementById('prep-sub-'+di);
+  if(bar) bar.style.width = pct+'%';
+  if(sub) sub.textContent = done+' of '+total+' ready';
+  if(pct===100 && bar) bar.style.background = 'var(--sci-mid)';
+  else if(bar) bar.style.background = 'var(--gold)';
+}
+
+function clearPrep(e, di){
+  e.stopPropagation();
+  const day = DAYS[di];
+  if(!day.prep) return;
+  day.prep.forEach((_,ii) => {
+    const key = di+'-'+ii;
+    PREP_STATE[key] = false;
+    const cb = document.getElementById('cb-'+key);
+    const pt = document.getElementById('pt-'+key);
+    if(cb) cb.classList.remove('checked');
+    if(pt) pt.classList.remove('checked');
+  });
+  updatePrepProgress(di);
+}
+
+function togglePrep(hdr){
+  const body = hdr.nextElementSibling;
+  const tog = hdr.querySelector('.prep-hdr-toggle');
+  body.classList.toggle('open');
+  tog.textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+
+// ── INIT ──
+renderLayers();
+renderPreChecklist();
+renderWeekAccordion();
+renderFoundationLessons(FOUNDATION_LESSONS, 'foundation-lessons');
+renderFoundationLessons(COLLAB_FOUNDATION, 'collab-foundation');
+renderSteps('steps-independent', false);
+renderSteps('steps-collaborative', true);
+renderPhases();
+renderICharts();
+renderConfTypes();
+renderSevenSteps();
+renderSelfCheck();
+</script>
+</body>
+</html>
